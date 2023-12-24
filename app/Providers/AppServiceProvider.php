@@ -11,7 +11,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->loadMigrationsFrom([
+            database_path() . "/migrations/users",
+            database_path() . "/migrations/invoices",
+            database_path() . "/migrations/products",
+            database_path() . "/migrations/pages",
+            database_path() . "/migrations/sliders",
+            database_path() . "/migrations/triggers",
+        ]);
     }
 
     /**

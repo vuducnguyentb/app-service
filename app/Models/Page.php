@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
 use Carbon\Carbon;
@@ -7,14 +11,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
- * Class Slider
- *
+ * Class Page
+ * 
  * @property int $id
- * @property string|null $title
- * @property string|null $description
- * @property string $image
- * @property int $list_slide_id
- * @property string|null $link
+ * @property int $author_id
+ * @property string $title
+ * @property string|null $excerpt
+ * @property string|null $body
+ * @property string|null $image
+ * @property string $slug
+ * @property string|null $meta_description
+ * @property string|null $meta_keywords
+ * @property string $status
  * @property int|null $created_by
  * @property int|null $updated_by
  * @property int|null $deleted_by
@@ -24,24 +32,28 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class Slider extends Model
+class Page extends Model
 {
 	use SoftDeletes;
-	protected $table = 'sliders';
+	protected $table = 'pages';
 
 	protected $casts = [
-		'list_slide_id' => 'int',
+		'author_id' => 'int',
 		'created_by' => 'int',
 		'updated_by' => 'int',
 		'deleted_by' => 'int'
 	];
 
 	protected $fillable = [
+		'author_id',
 		'title',
-		'description',
+		'excerpt',
+		'body',
 		'image',
-		'list_slide_id',
-		'link',
+		'slug',
+		'meta_description',
+		'meta_keywords',
+		'status',
 		'created_by',
 		'updated_by',
 		'deleted_by'
