@@ -8,10 +8,10 @@ class VerifyCsrfToken extends Middleware
 {
     /**
      * The URIs that should be excluded from CSRF verification.
-     *
+     *có thể upload ảnh
      * @var array<int, string>
      */
     protected $except = [
-        //
+        'laravel-filemanager/*'
     ];
 }

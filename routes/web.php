@@ -23,3 +23,12 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
 });
+
+Route::group(['prefix' => 'laravel-filemanager',
+    'middleware' => [
+        'web',
+//        'auth'
+    ]
+], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
