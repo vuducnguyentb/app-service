@@ -24,6 +24,8 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
     Route::resource('/categories','Admin\CategoryController');
+    Route::post('/generate-slug','Admin\CategoryController@generateSlug')
+        ->name('generate.slug');
 });
 
 Route::group(['prefix' => 'laravel-filemanager',
