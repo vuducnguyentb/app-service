@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * Class Page
  * 
  * @property int $id
- * @property int $author_id
  * @property string $title
  * @property string|null $excerpt
  * @property string|null $body
@@ -38,14 +37,12 @@ class Page extends Model
 	protected $table = 'pages';
 
 	protected $casts = [
-		'author_id' => 'int',
 		'created_by' => 'int',
 		'updated_by' => 'int',
 		'deleted_by' => 'int'
 	];
 
 	protected $fillable = [
-		'author_id',
 		'title',
 		'excerpt',
 		'body',

@@ -18,3 +18,5 @@ composer require intervention/image:*
 Lỗi upload chỉnh php.ini
 
 upload_tmp_dir = "C:/laragon/tmp"
+
+composer require spatie/laravel-fractal

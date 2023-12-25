@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\CategoryWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/', function () {
 #Các route trang quản trị
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
+    Route::resource('/categories','Admin\CategoryController');
 });
 
 Route::group(['prefix' => 'laravel-filemanager',
