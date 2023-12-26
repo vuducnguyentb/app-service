@@ -2,7 +2,7 @@
 @section('before_css')
 @endsection
 @section('content')
-<!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -21,7 +21,15 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -66,10 +74,10 @@
 <!-- /.content-wrapper -->
 @endsection
 @section('after_js')
+
     <script>
         jQuery('#nameCategory').keyup(function(){
             var name = $(this).val();
-            console.log(name)
             jQuery.ajax({
                 url: "{{route('generate.slug')}}",
                 type: 'POST',

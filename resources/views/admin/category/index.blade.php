@@ -58,8 +58,18 @@
                                             <td>{{$i}}</td>
                                             <td>{{$item['name']}}</td>
                                             <td>{{$item['slug']}}</td>
-                                            <td>Edit</td>
-                                            <td>Delete</td>
+                                            <td>
+                                                <a href="{{route('categories.edit',$item['id'])}}">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <form action="{{route('categories.destroy',$item['id'])}}" method="POST">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                <button onclick=" return  confirm('Bạn có chấp nhận xóa hay không?')"><i class="fas fa-trash-alt danger"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @php
                                         $i ++;

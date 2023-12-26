@@ -4,9 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Requests\Category\StoreCategoryRequest;
+use App\Http\Requests\Category\UpdateCategoryRequest;
+use App\Models\Category;
 use App\Repositories\Interfaces\Category\ICategoryRepository;
 use App\Transformers\Category\ListAdminCategoryTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class CategoryController extends BaseWebController
@@ -43,13 +47,12 @@ class CategoryController extends BaseWebController
 
     public function store(StoreCategoryRequest $request)
     {
-        try {
-            dd($request);
-            return $this->successResponse($data, 200);
-        } catch (\Exception $e) {
-            dd($e);
-            return $this->errorResponse($e->getMessage());
-        }
+        $data = $request->all();
+        Category::create([
+            'name'=>$data['name'],
+            'slug'=>$data['slug'],
+        ]);
+        return \redirect('/admin/categories');
     }
 
 
@@ -61,17 +64,30 @@ class CategoryController extends BaseWebController
 
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.category.edit')->with(
+            [
+                'category'=>$category
+            ]
+        );
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UpdateCategoryRequest $request, $id)
     {
-        //
+        $data = $request->all();
+        $category = Category::find($id);
+        $category->update([
+            'name'=>$data['name'],
+            'slug'=>$data['slug'],
+        ]);
+        return \redirect('/admin/categories');
     }
 
     public function destroy($id)
     {
-        //
+        $cate = Category::find($id);
+        $cate->delete();
+        return \redirect('/admin/categories');
     }
 }
