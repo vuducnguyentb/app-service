@@ -88,10 +88,14 @@ class PostController extends BaseWebController
 
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.category.edit')->with(
+        $categories = Category::get();
+        $post = Post::with('categories')->find($id);
+        $selectedCategories = $post->categories->pluck('id')->toArray();
+        return view('admin.post.edit')->with(
             [
-                'category' => $category
+                'post' => $post,
+                'selectedCategories' => $selectedCategories,
+                'categories'=>$categories
             ]
         );
     }
