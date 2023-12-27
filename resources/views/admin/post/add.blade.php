@@ -18,7 +18,7 @@
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->P
     </div>
     <!-- /.content-header -->
     @if ($errors->any())
@@ -64,9 +64,20 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Trạng thái bài viết</label>
                                     <select class="form-control" name="status">
-                                        <option>Sử dụng</option>
-                                        <option>Ngừng sử dụng</option>
+                                        <option value="active">Sử dụng</option>
+                                        <option value="in_active">Ngừng sử dụng</option>
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Danh mục bài viết</label>
+                                    <div class="form-check d-flex justify-content-around">
+                                            @foreach($categories as $key=>$category)
+                                                <div>
+                                                    <input class="form-check-input" type="checkbox" name="categories[]" value="{{$category->id}}">
+                                                    <label class="form-check-label">{{$category->name}}</label>
+                                                </div>
+                                            @endforeach
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Tóm tắt</label>

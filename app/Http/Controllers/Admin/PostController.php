@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Bizz\Upload;
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Requests\Post\PostStoreRequest;
 use App\Models\Category;
@@ -16,10 +17,15 @@ use Intervention\Image\Image;
 class PostController extends BaseWebController
 {
     public $postRepository;
+    public $upload;
 
-    public function __construct(IPostRepository $postRepository)
+    public function __construct(
+        IPostRepository $postRepository,
+        Upload $upload
+    )
     {
         $this->postRepository = $postRepository;
+        $this->upload = $upload;
     }
 
     public function index()
@@ -29,13 +35,16 @@ class PostController extends BaseWebController
         $this->setTransformer($transformer);
         $data = $this->transformData($entries, $this->transformer);
         return view('admin.post.index')->with([
-            'data'=>$data['data']
+            'data' => $data['data']
         ]);
     }
 
     public function create()
     {
-        return view('admin.post.add');
+        $categories = Category::get();
+        return view('admin.post.add')->with([
+            'categories'=>$categories
+        ]);
     }
 
     public function generateSlug(Request $request)
@@ -47,32 +56,27 @@ class PostController extends BaseWebController
     public function store(PostStoreRequest $request)
     {
         $data = $request->all();
-        $file = $data['files'];
-        $image = $request->file('files');
-        $fileName = time() . '.' . $image->getClientOriginalExtension();
-        dd($fileName);
-        $img = Image::make($image->getRealPath());
-        $img->resize(120, 120, function ($constraint) {
-            $constraint->aspectRatio();
-        });
-
-        $img->stream(); // <-- Key point
-
-        //dd();
-        Storage::disk('local')->put('images/1/smalls'.'/'.$fileName, $img, 'public');
-        dd($file);
-        Post::create([
-            'title'=>$data->title,
-            'excerpt'=>$data->excerpt,
-            'body'=>$data->body,
-            'image'=>$data->image,
-            'slug'=>$data->slug,
-            'meta_description'=>$data->description,
-            'meta_keywords'=>$data->keywords,
-            'status'=>$data->status,
-            'type'=>$data->type
+        $idCategories = $data['categories'];
+        if(array_key_exists('files',$data)){
+            $file = $data['files'];
+            $dataImage = Upload::upload($file);
+            $image = $dataImage['url'];
+        }else{
+            $image = null;
+        }
+        $post = Post::create([
+            'title' => $data['title'],
+            'excerpt' => $data['expert'],
+            'body' => $data['content'],
+            'image' => $image,
+            'slug' => $data['slug'],
+            'meta_description' => $data['description'],
+            'meta_keywords' => $data['keywords'],
+            'status' => $data['status'],
+//            'type' => $data['type']
         ]);
-        return \redirect('/admin/categories');
+        $post->categories()->attach($idCategories);
+        return \redirect('/admin/posts');
     }
 
 
@@ -87,7 +91,7 @@ class PostController extends BaseWebController
         $category = Category::find($id);
         return view('admin.category.edit')->with(
             [
-                'category'=>$category
+                'category' => $category
             ]
         );
     }
@@ -98,8 +102,8 @@ class PostController extends BaseWebController
         $data = $request->all();
         $category = Category::find($id);
         $category->update([
-            'name'=>$data['name'],
-            'slug'=>$data['slug'],
+            'name' => $data['name'],
+            'slug' => $data['slug'],
         ]);
         return \redirect('/admin/categories');
     }
