@@ -1,0 +1,161 @@
+@extends('admin.layouts.main')
+@section('before_css')
+@endsection
+@section('content')
+    <!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Thêm mới bài viết</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard v2</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 mb-1">
+                    <div class="card card-primary">
+                        <div class="card-header">
+{{--                            <h3 class="card-title">Quick Example</h3>--}}
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="POST" enctype="multipart/form-data" action="{{route('posts.store')}}">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tiêu đề</label>
+                                    <input type="text" class="form-control"
+                                           id="nameCategory" placeholder="Tên danh mục" name="title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Slug</label>
+                                    <input type="text" class="form-control"
+                                           id="slugCategory" placeholder="slug" name="slug">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group note-form-group note-group-select-from-files">
+                                        <label for="note-dialog-image-file-17036059093161" class="note-form-label">Select from files</label>
+                                        <input id="note-dialog-image-file-17036059093161" class="note-image-input form-control-file note-form-control note-input"
+                                               type="file" name="files" accept="image/*" multiple="multiple">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Trạng thái bài viết</label>
+                                    <select class="form-control" name="status">
+                                        <option>Sử dụng</option>
+                                        <option>Ngừng sử dụng</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Tóm tắt</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="expert"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Nội dung</label>
+                                    <textarea name="content" class="form-control my-editor" rows="7"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Meta Description</label>
+                                <textarea class="form-control" rows="3" placeholder="Enter ..." name="description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Meta Keywords</label>
+                                <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords"></textarea>
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Thêm</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@endsection
+@section('after_js')
+    <script src="https://cdn.tiny.cloud/1/enf347sqwth0w8591aihpr8dxial0jsln26c7u4zjv12b07q/tinymce/4/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        var editor_config = {
+            path_absolute : "/",
+            selector: "textarea.my-editor",
+            plugins: [
+                "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                "searchreplace wordcount visualblocks visualchars code fullscreen",
+                "insertdatetime media nonbreaking save table contextmenu directionality",
+                "emoticons template paste textcolor colorpicker textpattern"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media",
+            relative_urls: false,
+            file_browser_callback : function(field_name, url, type, win) {
+                var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
+                var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
+
+                var cmsURL = editor_config.path_absolute + 'laravel-filemanager?field_name=' + field_name;
+                if (type == 'image') {
+                    cmsURL = cmsURL + "&type=Images";
+                } else {
+                    cmsURL = cmsURL + "&type=Files";
+                }
+
+                tinyMCE.activeEditor.windowManager.open({
+                    file : cmsURL,
+                    title : 'Filemanager',
+                    width : x * 0.8,
+                    height : y * 0.8,
+                    resizable : "yes",
+                    close_previous : "no"
+                });
+            }
+        };
+
+        tinymce.init(editor_config);
+    </script>
+    <script>
+        jQuery('#nameCategory').keyup(function(){
+            var name = $(this).val();
+            jQuery.ajax({
+                url: "{{route('generate.slug')}}",
+                type: 'POST',
+                data: {name: name},
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data){
+                    $('#slugCategory').val(data.slug);
+                }
+            });
+        });
+    </script>
+@endsection
+

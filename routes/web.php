@@ -19,11 +19,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tinymce', function () {
+    return view('tinymce');
+});
 
 #Các route trang quản trị
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
     Route::resource('/categories','Admin\CategoryController');
+    Route::resource('/posts','Admin\PostController');
     Route::post('/generate-slug','Admin\CategoryController@generateSlug')
         ->name('generate.slug');
 });

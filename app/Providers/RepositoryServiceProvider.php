@@ -4,8 +4,10 @@
 namespace App\Providers;
 
 
-use App\Repositories\Interfaces\Category\CategoryRepository;
-use App\Repositories\Interfaces\Category\ICategoryRepository;
+use App\Repositories\Category\CategoryRepository;
+use App\Repositories\Category\ICategoryRepository;
+use App\Repositories\Post\IPostRepository;
+use App\Repositories\Post\PostRepository;
 
 class RepositoryServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -17,5 +19,6 @@ class RepositoryServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot():void
     {
         app()->singleton(ICategoryRepository::class,CategoryRepository::class);
+        app()->singleton(IPostRepository::class,PostRepository::class);
     }
 }
