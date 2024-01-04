@@ -70,7 +70,7 @@ class Upload
         $data = [
             "file" => $path,
             "file_id"=>$fileSave->id,
-            'url'=> $url
+            'url'=> $path
         ];
         return $data;// object
     }

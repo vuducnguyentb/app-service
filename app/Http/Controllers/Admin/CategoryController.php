@@ -48,10 +48,7 @@ class CategoryController extends BaseWebController
     public function store(StoreCategoryRequest $request)
     {
         $data = $request->all();
-        Category::create([
-            'name'=>$data['name'],
-            'slug'=>$data['slug'],
-        ]);
+        $this->categoryRepository->create($data);
         return \redirect('/admin/categories');
     }
 
@@ -77,10 +74,7 @@ class CategoryController extends BaseWebController
     {
         $data = $request->all();
         $category = Category::find($id);
-        $category->update([
-            'name'=>$data['name'],
-            'slug'=>$data['slug'],
-        ]);
+        $this->categoryRepository->update($id,$data);
         return \redirect('/admin/categories');
     }
 

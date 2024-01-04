@@ -5,14 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Bizz\Upload;
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Requests\Post\PostStoreRequest;
+use App\Http\Requests\Post\PostUpdateRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Repositories\Post\IPostRepository;
 use App\Transformers\Post\ListAdminPostTransformer;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Intervention\Image\Image;
 
 class PostController extends BaseWebController
 {
@@ -101,21 +100,50 @@ class PostController extends BaseWebController
     }
 
 
-    public function update(UpdateCategoryRequest $request, $id)
+    public function update(PostUpdateRequest $request, $id)
     {
         $data = $request->all();
-        $category = Category::find($id);
-        $category->update([
-            'name' => $data['name'],
-            'slug' => $data['slug'],
-        ]);
-        return \redirect('/admin/categories');
+        $idCategories = $data['categories'];
+        if(array_key_exists('newimage',$data)){
+            $file = $data['newimage'];
+            $dataImage = Upload::upload($file);
+            $image = $dataImage['url'];
+        }else{
+            $image = null;
+        }
+        $post = Post::find($id);
+        if($image){
+            $post->update([
+                'title' => $data['title'],
+                'slug' => $data['slug'],
+                'status' => $data['status'],
+                'expert' => $data['expert'],
+                'content' => $data['content'],
+                'meta_description' => $data['description'],
+                'meta_keywords' => $data['keywords'],
+                'image' => $image,
+                'body' => $data['content'],
+            ]);
+        }else{
+            $post->update([
+                'title' => $data['title'],
+                'slug' => $data['slug'],
+                'status' => $data['status'],
+                'expert' => $data['expert'],
+                'content' => $data['content'],
+                'meta_description' => $data['description'],
+                'meta_keywords' => $data['keywords'],
+            ]);
+        }
+        $post->categories()->sync($idCategories);
+        return \redirect('/admin/posts');
     }
 
     public function destroy($id)
     {
-        $cate = Category::find($id);
-        $cate->delete();
-        return \redirect('/admin/categories');
+        $post = Post::find($id);
+        $post->categories()->sync([]);
+        $post->delete();
+        return \redirect('/admin/posts');
     }
 }

@@ -57,12 +57,12 @@
                                     </div>
                                     <div class="form-group">
                                         @if($post->image)
-                                            <img src="{{asset('')}}" alt="">
+                                            <img src="{{asset('storage/'.$post->image)}}" alt="">
                                         @endif
                                         <div class="form-group note-form-group note-group-select-from-files">
                                             <label for="note-dialog-image-file-17036059093161" class="note-form-label">Select from files</label>
-                                            <input id="note-dialog-image-file-17036059093161" class="note-image-input form-control-file note-form-control note-input"
-                                                   type="file" name="files" accept="image/*" multiple="multiple">
+                                            <input type="file" class="note-image-input form-control-file note-form-control note-input"
+                                                   name="newimage">
                                         </div>
                                     </div>
                                     <div class="form-group">

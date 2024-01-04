@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Thêm mới bài viết</h1>
+                    <h1 class="m-0">Thêm mới danh mục</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -45,38 +45,15 @@
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tiêu đề</label>
+                                    <label for="exampleInputEmail1">Tên</label>
                                     <input type="text" class="form-control"
-                                           id="nameCategory" placeholder="Tên danh mục" name="title">
+                                           id="nameCategory" placeholder="Tên danh mục" name="name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Slug</label>
                                     <input type="text" class="form-control"
                                            id="slugCategory" placeholder="slug" name="slug">
                                 </div>
-                                <div class="form-group">
-                                    <div class="form-group note-form-group note-group-select-from-files">
-                                        <label for="note-dialog-image-file-17036059093161" class="note-form-label">Select from files</label>
-                                        <input id="note-dialog-image-file-17036059093161" class="note-image-input form-control-file note-form-control note-input"
-                                               type="file" name="files" accept="image/*" multiple="multiple">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Trạng thái bài viết</label>
-                                    <select class="form-control" name="status">
-                                        <option>Sử dụng</option>
-                                        <option>Ngừng sử dụng</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Tóm tắt</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="expert"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Nội dung</label>
-                                    <textarea class="form-control" rows="5" placeholder="Enter ..." id="my-editor" name="content"></textarea>
-                                </div>
-
                             </div>
                             <!-- /.card-body -->
 
@@ -97,24 +74,7 @@
 <!-- /.content-wrapper -->
 @endsection
 @section('after_js')
-    <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-    <script>
-        var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-        };
-    </script>
-    <script>
-        CKEDITOR.replace('my-editor', options);
-    </script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="{{asset('assets/ckeditor/adapters/jquery.js')}}"></script>
-{{--    <script src="/vendor/unisharp/laravel-ckeditor/adapters/jquery.js"></script>--}}
-    <script>
-        jQuery('textarea.my-editor').ckeditor(options);
-    </script>
+
     <script>
         jQuery('#nameCategory').keyup(function(){
             var name = $(this).val();
