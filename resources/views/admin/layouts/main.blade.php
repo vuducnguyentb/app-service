@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
+    <base href="http://app-service.test/TinyMCE4/">
     @yield('before_css')
     @notifyCss
 </head>
