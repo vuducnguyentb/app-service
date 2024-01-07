@@ -19,14 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tinymce', function () {
-    return view('tinymce');
-});
+//Route::get('/tinymce', function () {
+//    return view('tinymce');
+//});
+#Trang chủ
+Route::get('/','Client\HomeController@index')->name('home');
 
 #Các route trang quản trị
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
     Route::resource('/categories','Admin\CategoryController');
+    Route::resource('/product-categories','Admin\ProductCategoryController');
     Route::resource('/posts','Admin\PostController');
     Route::post('/generate-slug','Admin\CategoryController@generateSlug')
         ->name('generate.slug');
