@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Cập nhật bài viết</h1>
+                        <h1 class="m-0">Cập nhật sản phẩm {{$product->name}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -41,46 +41,66 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="POST" enctype="multipart/form-data" action="{{route('posts.update',$post->id)}}">
+                            <form method="POST" enctype="multipart/form-data" action="{{route('products.update',$product->id)}}">
                                 @method('PUT')
                                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Tiêu đề</label>
+                                        <label for="exampleInputEmail1">Code sản phẩm</label>
                                         <input type="text" class="form-control"
-                                               id="nameCategory" placeholder="Tên danh mục" name="title" value="{{$post->title}}">
+                                               id="codeCategory"  name="code" value="{{$product->code}}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                        <input type="text" class="form-control"
+                                               id="nameCategory" name="name" value="{{$product->name}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Slug</label>
                                         <input type="text" class="form-control"
-                                               id="slugCategory" placeholder="slug" name="slug" value="{{$post->slug}}">
+                                               id="slugCategory" name="slug" value="{{$product->slug}}">
                                     </div>
                                     <div class="form-group">
-                                        @if($post->image)
-                                            <img src="{{asset('storage/'.$post->image)}}" alt="">
+                                        @if($product->image)
+                                            <img src="{{asset('storage/'.$product->image)}}" alt="">
                                         @endif
                                         <div class="form-group note-form-group note-group-select-from-files">
                                             <label for="note-dialog-image-file-17036059093161" class="note-form-label">Select from files</label>
-                                            <input type="file" class="note-image-input form-control-file note-form-control note-input"
-                                                   name="newimage">
+                                            <input id="note-dialog-image-file-17036059093161" class="note-image-input form-control-file note-form-control note-input"
+                                                   type="file" name="newimage" accept="image/*" multiple="multiple">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Trạng thái bài viết</label>
+                                        <label for="exampleInputPassword1">Trạng thái</label>
                                         <select class="form-control" name="status">
-                                            <option value="active" {{$post->status == 'active' ? 'selected' :''}} >Sử dụng</option>
-                                            <option value="in_active" {{$post->status == 'in_active' ? 'selected' :''}}>Ngừng sử dụng</option>
+                                            <option value="active" {{$product->status == 'active' ? 'selected' :''}} >Sử dụng</option>
+                                            <option value="in_active" {{$product->status == 'in_active' ? 'selected' :''}}>Ngừng sử dụng</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Danh mục bài viết</label>
+                                        <label for="exampleInputPassword1">Có hot không?</label>
+                                        <select class="form-control" name="is_hot">
+                                            <option value="in_active" {{$product->is_hot == 'in_active' ? 'selected' :''}}>Thường</option>
+                                            <option value="active" {{$product->is_hot == 'active' ? 'selected' :''}}>Hot</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">FreeShip</label>
+                                        <select class="form-control" name="freeship">
+                                            <option value="in_active" {{$product->freeship == 'in_active' ? 'selected' :''}}>Không</option>
+                                            <option value="active" {{$product->freeship == 'active' ? 'selected' :''}}>Có</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Danh mục </label>
                                         <div class="form-check d-flex justify-content-around">
                                             @foreach($categories as $key=>$category)
                                                 <div>
-                                                    <input class="form-check-input" type="checkbox"
-                                                           name="categories[]"
+                                                    <input class="form-check-input"
+                                                           type="radio"
+                                                           name="category"
                                                            value="{{$category->id}}"
-                                                        {{in_array($category->id,$selectedCategories) ? 'checked' :''}}
+                                                        {{$category->id == $selectedCategory ? 'checked' :''}}
                                                     >
                                                     <label class="form-check-label">{{$category->name}}</label>
                                                 </div>
@@ -88,21 +108,24 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="exampleInputPassword1">Tóm tắt</label>
-                                        <textarea class="form-control" rows="3" placeholder="Enter ..." name="expert">{{ old('excerpt', $post->excerpt) }}</textarea>
+                                        <label for="exampleInputPassword1">Số lượng có</label>
+                                        <input type="number" class="form-control"
+                                               id="quantityCategory"  name="quantity"
+                                        value="{{$product->quantity}}"
+                                        >
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Nội dung</label>
-                                        <textarea name="content" class="form-control my-editor" rows="7">{!! old('body', $post->body) !!}</textarea>
+                                        <textarea name="content" class="form-control my-editor" rows="7">{!! old('body', $product->body) !!}</textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Meta Description</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="description">{{ old('meta_description', $post->meta_description) }}</textarea>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="description">{{ old('meta_description', $product->meta_description) }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Meta Keywords</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords">{{ old('meta_keywords', $post->meta_keywords) }}</textarea>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords">{{ old('meta_keywords', $product->meta_keywords) }}</textarea>
                                 </div>
                                 <!-- /.card-body -->
 

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProductPrice
- * 
+ *
  * @property int $id
  * @property string $auditable_type
  * @property int $auditable_id
@@ -53,4 +53,9 @@ class ProductPrice extends Model
 		'updated_by',
 		'deleted_by'
 	];
+
+    public function pricetable()
+    {
+        return $this->morphTo();
+    }
 }

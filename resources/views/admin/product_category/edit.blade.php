@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Sửa danh mục #{{$category->id}}</h1>
+                        <h1 class="m-0">Sửa danh mục {{$category->name}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -41,21 +41,52 @@
                             </div>
                             <!-- /.card-header -->
                             <!-- form start -->
-                            <form method="POST" enctype="multipart/form-data" action="{{route('categories.update',$category->id)}}">
+                            <form method="POST" enctype="multipart/form-data" action="{{route('product-categories.update',$category->id)}}">
                                 @method('PUT')
                                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                 <div class="card-body">
                                     <div class="form-group">
+                                        <label for="exampleInputEmail1">Code</label>
+                                        <input type="text" class="form-control"
+                                               id="codeCategory" name="code" value="{{$category->code}}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="exampleInputEmail1">Tên</label>
                                         <input type="text" class="form-control"
-                                               id="nameCategory" placeholder="Tên danh mục" name="name" value="{{$category->name}}">
+                                               id="nameCategory" placeholder="Tên danh mục" name="name"
+                                               value="{{$category->name}}">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Slug</label>
                                         <input type="text" class="form-control"
-                                               id="slugCategory" placeholder="slug" name="slug" value="{{$category->slug}}">
+                                               id="slugCategory" placeholder="slug" name="slug"
+                                               value="{{$category->slug}}"
+                                        >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Trạng thái bài viết</label>
+                                        <select class="form-control" name="status">
+                                            <option value="active" {{$category->status == 'active' ? 'selected' :''}}>Sử dụng</option>
+                                            <option value="in_active" {{$category->status == 'in_active' ? 'selected' :''}}>Ngừng sử dụng</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Loại</label>
+                                        <select class="form-control" name="type">
+                                            <option value="combo" {{$category->status == 'combo' ? 'selected' :''}}>Combo</option>
+                                            <option value="product" {{$category->status == 'product' ? 'selected' :''}}>Sản phẩm</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Meta Description</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter ..." name="description">{{ old('meta_description', $category->meta_description) }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Meta Keywords</label>
+                                        <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords">{{ old('meta_keywords', $category->meta_keywords) }}</textarea>
                                     </div>
                                 </div>
+
                                 <!-- /.card-body -->
 
                                 <div class="card-footer">

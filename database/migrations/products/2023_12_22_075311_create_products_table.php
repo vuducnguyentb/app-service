@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->string('slug')->unique();
             $table->bigInteger('product_category_id')->unsigned()->nullable()
             ->comment('id nhóm sản phẩm');
+            $table->longText('body')->nullable()->comment('nội dung');
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->enum('status', ['active', 'in_active'])

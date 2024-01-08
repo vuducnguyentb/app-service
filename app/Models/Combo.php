@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Combo
- * 
+ *
  * @property int $id
  * @property string $code
  * @property string $name
@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property ProductCategory|null $product_category
  * @property Collection|Product[] $products
  *
@@ -56,7 +56,8 @@ class Combo extends Model
 		'code',
 		'name',
 		'slug',
-		'product_category_id',
+        'body',
+        'product_category_id',
 		'meta_description',
 		'meta_keywords',
 		'status',
@@ -80,4 +81,14 @@ class Combo extends Model
 					->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at')
 					->withTimestamps();
 	}
+
+    public function productPrices()
+    {
+        return $this->morphMany(
+            ProductPrice::class,
+            'pricetable',
+            'auditable_type',
+            'auditable_id'
+        );
+    }
 }

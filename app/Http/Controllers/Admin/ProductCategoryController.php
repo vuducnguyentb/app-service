@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductCategory\ProductCategoryStoreRequest;
+use App\Http\Requests\ProductCategory\ProductCategoryUpdateRequest;
+use App\Models\ProductCategory;
 use App\Repositories\ProductCategory\IProductCategoryRepository;
 use App\Transformers\ProductCategory\ListAdminProductCategoryTransformer;
 use Illuminate\Http\Request;
@@ -25,14 +28,14 @@ class ProductCategoryController extends BaseWebController
         $this->setTransformer($transformer);
         $data = $this->transformData($categories, $this->transformer);
         return view('admin.product_category.index')->with([
-            'data'=>$categories
+            'data' => $categories
         ]);
     }
 
 
     public function create()
     {
-        return view('admin.category.add');
+        return view('admin.product_category.add');
     }
 
     public function generateSlug(Request $request)
@@ -41,11 +44,21 @@ class ProductCategoryController extends BaseWebController
         return response()->json(['slug' => $slug]);
     }
 
-    public function store(StoreCategoryRequest $request)
+    public function store(ProductCategoryStoreRequest $request)
     {
         $data = $request->all();
-        $this->categoryRepository->create($data);
-        return \redirect('/admin/categories');
+        $this->categoryRepository->create(
+            [
+                "code" => $data['code'],
+                "name" => $data['name'],
+                "slug" => $data['slug'],
+                "status" => $data['status'],
+                "type" => $data['type'],
+                "meta_description" => $data['description'],
+                "meta_keywords" => $data['keywords'],
+            ]
+        );
+        return \redirect('/admin/product-categories');
     }
 
 
@@ -57,27 +70,37 @@ class ProductCategoryController extends BaseWebController
 
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('admin.category.edit')->with(
+        $category = ProductCategory::find($id);
+        return view('admin.product_category.edit')->with(
             [
-                'category'=>$category
+                'category' => $category
             ]
         );
     }
 
 
-    public function update(UpdateCategoryRequest $request, $id)
+    public function update(ProductCategoryUpdateRequest $request, $id)
     {
         $data = $request->all();
-        $category = Category::find($id);
-        $this->categoryRepository->update($id,$data);
-        return \redirect('/admin/categories');
+        $category = ProductCategory::find($id);
+        $this->categoryRepository->update($id,
+            [
+                "code" => $data['code'],
+                "name" => $data['name'],
+                "slug" => $data['slug'],
+                "status" => $data['status'],
+                "type" => $data['type'],
+                "meta_description" => $data['description'],
+                "meta_keywords" => $data['keywords'],
+            ]
+        );
+        return \redirect('/admin/product-categories');
     }
 
     public function destroy($id)
     {
-        $cate = Category::find($id);
+        $cate = ProductCategory::find($id);
         $cate->delete();
-        return \redirect('/admin/categories');
+        return \redirect('/admin/product-categories');
     }
 }

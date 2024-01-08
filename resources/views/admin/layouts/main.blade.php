@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
     <base href="http://app-service.test/TinyMCE4/">
     @yield('before_css')
-    @notifyCss
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -24,7 +23,6 @@
     <div class="preloader flex-column justify-content-center align-items-center">
         <img class="animation__wobble" src="{{asset('assets/dist/img/AdminLTELogo.png')}}" alt="AdminLTELogo" height="60" width="60">
     </div>
-    @include('notify::components.notify')
     @include('admin.layouts.header')
 
     <!-- Main Sidebar Container -->
@@ -68,6 +66,5 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('assets/dist/js/pages/dashboard2.js')}}"></script>
 @yield('after_js')
-@notifyJs
 </body>
 </html>

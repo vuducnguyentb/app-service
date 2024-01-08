@@ -20,6 +20,7 @@ return new class extends Migration
                 ->comment('id nhóm sản phẩm');
             $table->text('meta_description')->nullable();
             $table->text('meta_keywords')->nullable();
+            $table->longText('body')->nullable()->comment('nội dung');
             $table->enum('status', ['active', 'in_active'])
                 ->default('active')
                 ->comment('Trạng thái:hoạt động và ngừng hoạt động');

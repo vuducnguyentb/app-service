@@ -41,9 +41,14 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" enctype="multipart/form-data" action="{{route('categories.store')}}">
+                        <form method="POST" enctype="multipart/form-data" action="{{route('product-categories.store')}}">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Code</label>
+                                    <input type="text" class="form-control"
+                                           id="codeCategory" name="code">
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên</label>
                                     <input type="text" class="form-control"
@@ -54,7 +59,30 @@
                                     <input type="text" class="form-control"
                                            id="slugCategory" placeholder="slug" name="slug">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Trạng thái bài viết</label>
+                                    <select class="form-control" name="status">
+                                        <option value="active">Sử dụng</option>
+                                        <option value="in_active">Ngừng sử dụng</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Loại</label>
+                                    <select class="form-control" name="type">
+                                        <option value="combo">Combo</option>
+                                        <option value="product">Sản phẩm</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Meta Description</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="description"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Meta Keywords</label>
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords"></textarea>
+                                </div>
                             </div>
+
                             <!-- /.card-body -->
 
                             <div class="card-footer">

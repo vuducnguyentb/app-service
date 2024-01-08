@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Product
- * 
+ *
  * @property int $id
  * @property string $code
  * @property string $name
@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property ProductCategory|null $product_category
  * @property Collection|Combo[] $combos
  *
@@ -56,6 +56,7 @@ class Product extends Model
 		'code',
 		'name',
 		'slug',
+		'body',
 		'product_category_id',
 		'meta_description',
 		'meta_keywords',
@@ -69,7 +70,7 @@ class Product extends Model
 		'deleted_by'
 	];
 
-	public function product_category()
+	public function productCategory()
 	{
 		return $this->belongsTo(ProductCategory::class);
 	}
@@ -80,4 +81,14 @@ class Product extends Model
 					->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at')
 					->withTimestamps();
 	}
+
+	public function productPrices()
+    {
+        return $this->morphMany(
+            ProductPrice::class,
+            'pricetable',
+            'auditable_type',
+            'auditable_id'
+        );
+    }
 }

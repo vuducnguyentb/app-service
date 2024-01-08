@@ -15,7 +15,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('title')->comment('tiêu đề bài viết');
             $table->text('excerpt')->nullable()->comment('đoạn trích');
-            $table->text('body')->nullable()->comment('nội dung');
+            $table->longText('body')->nullable()->comment('nội dung');
             $table->string('image')->nullable()->comment('ảnh');
             $table->string('slug')->unique();
             $table->text('meta_description')->nullable();
