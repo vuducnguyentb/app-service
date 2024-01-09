@@ -76,9 +76,7 @@ class ProductController extends BaseWebController
             'freeship' => $data['freeship'],
             'is_hot' => $data['is_hot'],
             'product_category_id' => $data['category'],
-//            'type' => $data['type']
         ]);
-//        $post->categories()->attach($idCategories);
         return \redirect('/admin/products');
     }
 
@@ -91,7 +89,7 @@ class ProductController extends BaseWebController
 
     public function edit($id)
     {
-        $categories = ProductCategory::get();
+        $categories = ProductCategory::where('type',BaseEnum::TypeProduct)->get();
         $product = Product::with('productCategory')->find($id);
         $selectedCategory = $product->productCategory->id;
         return view('admin.product.edit')->with(
@@ -151,9 +149,9 @@ class ProductController extends BaseWebController
 
     public function destroy($id)
     {
-        $post = Product::find($id);
-        $post->categories()->sync([]);
-        $post->delete();
-        return \redirect('/admin/posts');
+        $entry = Product::find($id);
+        $entry->productPrices()->delete();
+        $entry->delete();
+        return \redirect('/admin/products');
     }
 }

@@ -66,12 +66,4 @@ class ProductPriceController extends BaseWebController
         return \redirect('/admin/product-prices/'.$id);
     }
 }
-//        foreach ($items as $key=>$item){
-//            ProductPrice::create([
-//                'auditable_type'=>BaseEnum::TypeProduct,
-//                'auditable_id'=>$id,
-//                'price'=>(int)$item['price'],
-//                'quantity'=>(int)$item['quantity'],
-//                'day'=>'9',
-//            ]);
-//        }
+

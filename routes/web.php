@@ -39,6 +39,14 @@ Route::prefix('admin')->group(function(){
         ->name('admin.product.price');
     Route::put('/product-prices/{id}','Admin\ProductPriceController@update')
         ->name('admin.product.price.update');
+    #combo
+    Route::resource('/combos','Admin\ComboController');
+    #giá combo
+    Route::get('/combo-prices/{id}','Admin\ComboPriceController@show')
+        ->name('admin.combo.price');
+    Route::put('/combo-prices/{id}','Admin\ComboPriceController@update')
+        ->name('admin.combo.price.update');
+
     #bài viết
     Route::resource('/posts','Admin\PostController');
     Route::post('/generate-slug','Admin\CategoryController@generateSlug')

@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('combo_products', function (Blueprint $table) {
             $table->bigInteger('combo_id')->unsigned();
             $table->bigInteger('product_id')->unsigned();
+            $table->integer('quantity')->default(1)
+                ->comment('số lượng sản phẩm cho combo.');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();

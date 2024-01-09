@@ -46,7 +46,7 @@ class Combo extends Model
 	protected $casts = [
 		'product_category_id' => 'int',
 		'quantity' => 'int',
-		'freeship' => 'int',
+//		'freeship' => 'int',
 		'created_by' => 'int',
 		'updated_by' => 'int',
 		'deleted_by' => 'int'
@@ -70,7 +70,7 @@ class Combo extends Model
 		'deleted_by'
 	];
 
-	public function product_category()
+	public function productCategory()
 	{
 		return $this->belongsTo(ProductCategory::class);
 	}
@@ -78,7 +78,7 @@ class Combo extends Model
 	public function products()
 	{
 		return $this->belongsToMany(Product::class, 'combo_products')
-					->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at')
+					->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at','quantity')
 					->withTimestamps();
 	}
 

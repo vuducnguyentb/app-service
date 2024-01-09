@@ -57,15 +57,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link ">
+                            <a href="{{route('combos.index')}}" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Combo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Giá sản phẩm</p>
                             </a>
                         </li>
                     </ul>

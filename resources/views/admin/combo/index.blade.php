@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Danh sách sản phẩm</h1>
+                        <h1 class="m-0">Danh sách combo</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -33,7 +33,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 mb-1">
-                        <a href="{{route('products.create')}}" class="btn btn-outline-info">Thêm sản phẩm </a>
+                        <a href="{{route('combos.create')}}" class="btn btn-outline-info">Thêm combo </a>
                     </div>
                     <div class="col-12">
                         <div class="card">
@@ -47,10 +47,11 @@
                                         <th>Tiêu đề</th>
                                         <th>Slug</th>
                                         <th>Danh mục</th>
+                                        <th>Sản phẩm</th>
                                         <th>Số lượng</th>
                                         <th>HOT</th>
                                         <th>Sửa</th>
-                                        <th>Giá sp</th>
+                                        <th>Giá cb</th>
                                         <th>Xóa</th>
                                     </tr>
                                     </thead>
@@ -63,30 +64,33 @@
                                             <td>{{$i}}</td>
                                             <td>
                                                 @if($item['image'])
-                                                    <img src="{{asset('storage/'.$item['image'])}}" alt="">
+                                                    <img src="{{asset('storage/'.$item['image'])}}" alt="" width="50px">
                                                 @endif
                                             </td>
                                             <td>{{$item['name']}}</td>
                                             <td>{{$item['slug']}}</td>
                                             <td>
-{{--                                                @foreach($item['categories'] as $key2=>$category)--}}
                                                     <span class="badge badge-success">{{$item['nameCategory']}}</span>
-{{--                                                @endforeach--}}
+                                            </td>
+                                            <td>
+                                                @foreach($item['products'] as $key=>$product)
+                                                   * {{$product['name']}}  </br>
+                                                @endforeach
                                             </td>
                                             <td>{{$item['quantity']}}</td>
                                             <td>{{$item['is_hot'] == 'active' ? 'HOT' : ''}}</td>
                                             <td>
-                                                <a href="{{route('products.edit',$item['id'])}}">
+                                                <a href="{{route('combos.edit',$item['id'])}}">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="{{route('admin.product.price',$item['id'])}}">
+                                                <a href="{{route('admin.combo.price',$item['id'])}}">
                                                     <i class="fas fa-plus"></i>
                                                 </a>
                                             </td>
                                             <td>
-                                                <form action="{{route('products.destroy',$item['id'])}}" method="POST">
+                                                <form action="{{route('combos.destroy',$item['id'])}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                 <button onclick=" return  confirm('Bạn có chấp nhận xóa hay không?')"><i class="fas fa-trash-alt danger"></i></button>

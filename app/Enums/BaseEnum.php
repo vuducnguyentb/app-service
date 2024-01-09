@@ -13,5 +13,6 @@ final class BaseEnum extends Enum
 {
     const TypeProduct = 'product';
     const TypeCombo = 'combo';
-    const OptionThree = 2;
+    const Active = 'active';
+    const InActive = 'in_active';
 }

@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
     {
         $arrayProducts = [
             [
-                'name'=>'Android Version',
+                'name'=>'Bạt nhỏ 2x3',
                 'slug'=>'a',
                 'code'=>'a',
                 'body'=>'',
@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
                 'product_category_id'=>2,
             ],
             [
-                'name'=>'Video Tutorial',
+                'name'=>'Bạt to 3x4',
                 'slug'=>'v',
                 'code'=>'b',
                 'body'=>'',
@@ -34,7 +34,7 @@ class ProductSeeder extends Seeder
                 'product_category_id'=>1,
             ],
             [
-                'name'=>'Installation',
+                'name'=>'Ghế nhựa',
                 'slug'=>'i',
                 'code'=>'c',
                 'body'=>'',
@@ -43,7 +43,7 @@ class ProductSeeder extends Seeder
                 'product_category_id'=>2,
             ],
             [
-                'name'=>'Usage',
+                'name'=>'Bạt trẻ em',
                 'slug'=>'u',
                 'code'=>'d',
                 'body'=>'',
@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
                 'product_category_id'=>1,
             ],
             [
-                'name'=>'Type of notifications',
+                'name'=>'Áo mưa',
                 'slug'=>'t',
                 'code'=>'e',
                 'body'=>'',

@@ -28,8 +28,11 @@ return new class extends Migration
                 ->comment('ảnh sản phẩm');
             $table->integer('quantity')->default(0)
                 ->comment('số lượng hiện có.');
-            $table->integer('freeship')->default(0)
-                ->comment('phí ship');
+            $table->enum('freeship', ['active', 'in_active'])
+                ->default('in_active')
+                ->comment('Trạng thái:hoạt động và ngừng hoạt động');
+//            $table->integer('freeship')->default(0)
+//                ->comment('phí ship');
             $table->enum('is_hot', ['active', 'in_active'])
                 ->default('active')
                 ->comment('Có phải sản phẩm hot tuần');
