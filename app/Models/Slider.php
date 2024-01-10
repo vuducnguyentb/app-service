@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Slider
- * 
+ *
  * @property int $id
  * @property string|null $title
  * @property string|null $description
@@ -44,10 +44,15 @@ class Slider extends Model
 		'title',
 		'description',
 		'image',
-		'list_slide_id',
+		'list_slider_id',
 		'link',
 		'created_by',
 		'updated_by',
 		'deleted_by'
 	];
+
+    public function listSlider()
+    {
+        return $this->belongsTo(ListSlider::class);
+    }
 }

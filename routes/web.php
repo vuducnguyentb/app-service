@@ -28,8 +28,7 @@ Route::get('/','Client\HomeController@index')->name('home');
 #Các route trang quản trị
 Route::prefix('admin')->group(function(){
     Route::get('/dashboard',[DashBoardController::class,'index']);
-    #danh mục bài viết
-    Route::resource('/categories','Admin\CategoryController');
+
     #danh mục sản phẩm - combo
     Route::resource('/product-categories','Admin\ProductCategoryController');
     #sản phẩm
@@ -47,10 +46,17 @@ Route::prefix('admin')->group(function(){
     Route::put('/combo-prices/{id}','Admin\ComboPriceController@update')
         ->name('admin.combo.price.update');
 
+
+    #danh mục bài viết
+    Route::resource('/categories','Admin\CategoryController');
     #bài viết
     Route::resource('/posts','Admin\PostController');
     Route::post('/generate-slug','Admin\CategoryController@generateSlug')
         ->name('generate.slug');
+    #slider
+    Route::resource('/sliders','Admin\SliderController');
+
+
 });
 
 Route::group(['prefix' => 'laravel-filemanager',

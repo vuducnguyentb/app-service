@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ListSlider
- * 
+ *
  * @property int $id
  * @property string|null $name
  * @property string|null $key
@@ -45,4 +45,9 @@ class ListSlider extends Model
 		'updated_by',
 		'deleted_by'
 	];
+
+    public function sliders()
+    {
+        return $this->hasMany(Slider::class);
+    }
 }

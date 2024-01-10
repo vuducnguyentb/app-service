@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('description')->nullable();
             $table->string('image');
-            $table->bigInteger('list_slide_id')->default(1);
+            $table->bigInteger('list_slider_id')->default(1);
             $table->string('link')->nullable()->comment('đường link');
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
