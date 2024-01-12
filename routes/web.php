@@ -25,9 +25,17 @@ Route::get('/', function () {
 #Trang chủ
 Route::get('/','Client\HomeController@index')->name('home');
 
+#Trang đăng nhập
+Route::get('/sign-in','LoginController@login')->name('login');
+Route::post('/login','LoginController@checkLogin')->name('check-login');
+
 #Các route trang quản trị
-Route::prefix('admin')->group(function(){
-    Route::get('/dashboard',[DashBoardController::class,'index']);
+Route::prefix('admin')
+    ->middleware([
+        'auth:sanctum'
+    ])
+    ->group(function(){
+    Route::get('/dashboard',[DashBoardController::class,'index'])->name('dasdhboard');
 
     #danh mục sản phẩm - combo
     Route::resource('/product-categories','Admin\ProductCategoryController');
@@ -55,13 +63,12 @@ Route::prefix('admin')->group(function(){
         ->name('generate.slug');
     #slider
     Route::resource('/sliders','Admin\SliderController');
-
-
 });
 
 Route::group(['prefix' => 'laravel-filemanager',
     'middleware' => [
         'web',
+        'auth:sanctum'
 //        'auth'
     ]
 ], function () {
