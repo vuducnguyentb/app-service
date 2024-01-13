@@ -28,6 +28,7 @@ Route::get('/','Client\HomeController@index')->name('home');
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');
 Route::post('/login','LoginController@checkLogin')->name('check-login');
+Route::get('/logout','LoginController@logout')->name('logout');
 
 #Các route trang quản trị
 Route::prefix('admin')

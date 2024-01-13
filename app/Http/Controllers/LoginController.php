@@ -28,4 +28,9 @@ class LoginController extends BaseWebController
         return back();
         return response()->json(['message' => 'Invalid credentials'], 401);
     }
+
+    public function logout(){
+        Auth::logout();
+        return redirect('/sign-in');
+    }
 }
