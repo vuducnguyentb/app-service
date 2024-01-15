@@ -5,16 +5,16 @@
                 <div class="col-md-4">
                     <!-- Footer widget area 1 -->
                     <div class="widget clearfix widget-contact-us" style="background-image: url('images/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">
-                        <h4>About POLO</h4>
+                        <h4>Thông tin BATDANGOAI</h4>
                         <ul class="list-icon">
-                            <li><i class="fa fa-map-marker"></i> 795 Folsom Ave, Suite 600
-                                <br>San Francisco, CA 94107</li>
-                            <li><i class="fa fa-phone"></i> (123) 456-7890 </li>
+                            <li><i class="fa fa-map-marker"></i>275 ngõ 141 Giáp Nhị - Thịnh Liệt - Hoàng Mai
+                                <br>(Cạnh đầu sông Sét)</li>
+                            <li><i class="fa fa-phone"></i> 0904.779.796 </li>
                             <li><i class="fa fa-envelope"></i> <a href="mailto:first.last@example.com">first.last@example.com</a>
                             </li>
                             <li>
-                                <br><i class="fa fa-clock-o"></i>Monday - Friday: <strong>08:00 - 22:00</strong>
-                                <br>Saturday, Sunday: <strong>Closed</strong>
+                                <br><i class="fa fa-clock-o"></i>Thứ 2- Chủ Nhật: <strong>08:00 - 22:00</strong>
+{{--                                <br>Saturday, Sunday: <strong>Closed</strong>--}}
                             </li>
                         </ul>
                         <!-- Social icons -->
@@ -84,7 +84,7 @@
                 <div class="col-md-3">
                     <!-- Footer widget area 4 -->
                     <div class="widget widget-tweeter" data-username="ardianmusliu" data-limit="2">
-                        <h4>Recent Tweets</h4>
+                        <h4>Map</h4>
                     </div>
                     <!-- end: Footer widget area 4 -->
                 </div>

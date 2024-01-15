@@ -62,6 +62,9 @@ Route::prefix('admin')
     Route::resource('/posts','Admin\PostController');
     Route::post('/generate-slug','Admin\CategoryController@generateSlug')
         ->name('generate.slug');
+    #trang
+        Route::resource('/pages','Admin\PageController');
+
     #slider
     Route::resource('/sliders','Admin\SliderController');
 });

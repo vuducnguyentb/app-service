@@ -21,7 +21,7 @@
 <div id="wrapper">
 
     <!-- TOPBAR -->
-@include('client.layouts.topbar')
+{{--@include('client.layouts.topbar')--}}
 <!-- end: TOPBAR -->
 
     <!-- Header -->

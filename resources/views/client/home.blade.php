@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="slide-captions">
                     <!-- Captions -->
-                    <h2 class="text-large text-dark">BIG SALE<br />UP TO 50%</h2>
+                    <h2 class="text-large text-dark">HỌC SINH - SINH VIÊN<br />GIẢM NGAY 10%</h2>
                     <a class="btn btn-dark" href="#">Shop Now</a>
                     <a class="btn btn-dark btn-outline" href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View Collection</a>
                     <!-- end: Captions -->
@@ -34,28 +34,114 @@
     </div>
     <!--end: Inspiro Slider -->
 
-    <!-- SUMMER SALE -->
-    <section class="section-pattern p-t-60 p-b-30 text-center" style="background: url({{asset('assets/images/pattern/pattern22.png')}})">
+    <!-- end: Sản phẩm Hot -->
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col-md-5 text-left">
-                    <h2 class="text-medium">Summer Sale</h2>
-                    <p>Order more than 60$ and you will get free shippining Worldwide. <a href="#" class="read-more">More info</a></p>
+                <div class="col-md-12">
+                    <div class="hr-title hr-long center"><abbr>Sản phẩm nổi bật </abbr> </div>
+
                 </div>
-                <div class="col-md-7">
-                    <div class="countdown medium" data-countdown="2018/02/19 11:34:51" data-animation="fadeInUp"></div>
+            </div>
+
+            <div class="shop-category">
+                <div class="row">
+                    @for($i=0;$i<=3;$i++)
+                        <div class="col-md-3">
+                            <div class="product">
+                                <div class="product-image">
+                                    <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                    </a>
+                                    <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/10.jpg')}}">
+                                    </a>
+                                    <span class="product-new">NEW</span>
+                                    <span class="product-wishlist">
+<a href="#"><i class="fa fa-heart"></i></a>
+</span>
+                                    <div class="product-overlay">
+                                        <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick View</a>
+                                    </div>
+                                </div>
+
+                                <div class="product-description">
+                                    <div class="product-category">Women</div>
+                                    <div class="product-title">
+                                        <h3><a href="#">Bolt Sweatshirt</a></h3>
+                                    </div>
+                                    <div class="product-price"><ins>$15.00</ins>
+                                    </div>
+                                    <div class="product-rate">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
+                                    <div class="product-reviews"><a href="#">6 customer reviews</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endfor
                 </div>
             </div>
         </div>
     </section>
-    <!-- end: SUMMER SALE -->
+    <!-- end: Sản phẩm Hot -->
+
+    <!-- DELIVERY INFO -->
+    <section class="background-grey p-t-40 p-b-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="icon-box effect small clean">
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-phone-square"></i></a>
+                        </div>
+                        <h3>Tư vấn 24/7</h3>
+                        <p>
+                            Hỗ trợ tư vấn nhiệt tình
+                            0386.267.017</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-box effect small clean">
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-plane"></i></a>
+                        </div>
+                        <h3>Miễn phí giao hàng</h3>
+                        <p>Cho đơn hàng từ 999K</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-box effect small clean">
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <h3>Sản phẩm</h3>
+                        <p>Sản phẩm chất lượng, liên tục cập nhật.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="icon-box effect small clean">
+                        <div class="icon">
+                            <a href="#"><i class="fa fa-history"></i></a>
+                        </div>
+                        <h3>Thủ tục thuê</h3>
+                        <p>Nhanh gọn - Dễ dàng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end: DELIVERY INFO -->
 
     <!-- Shop products -->
     <section>
         <div class="container">
 
             <div class="heading m-b-40">
-                <h4>Featured products</h4>
+                <h4>Sản phẩm đi kèm</h4>
             </div>
 
             <!--Product list-->
@@ -353,43 +439,22 @@
     </section>
     <!-- end: Shop products -->
 
-    <!-- DELIVERY INFO -->
-    <section class="background-grey p-t-40 p-b-0">
+    <!-- SUMMER SALE -->
+    <section class="section-pattern p-t-60 p-b-30 text-center" style="background: url({{asset('assets/images/pattern/pattern22.png')}})">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-gift"></i></a>
-                        </div>
-                        <h3>Free shipping on orders $60+</h3>
-                        <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
-                    </div>
+                <div class="col-md-5 text-left">
+                    <h2 class="text-medium">Summer Sale</h2>
+                    <p>Order more than 60$ and you will get free shippining Worldwide. <a href="#" class="read-more">More info</a></p>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-plane"></i></a>
-                        </div>
-                        <h3>Worldwide delivery</h3>
-                        <p>We deliver to the following countries: USA, Canada, Europe, Australia</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-history"></i></a>
-                        </div>
-                        <h3>60 days money back guranty!</h3>
-                        <p>Not happy with our product, feel free to return it, we will refund 100% your money!</p>
-                    </div>
+                <div class="col-md-7">
+                    <div class="countdown medium" data-countdown="2018/02/19 11:34:51" data-animation="fadeInUp"></div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- end: DELIVERY INFO -->
+    <!-- end: SUMMER SALE -->
+
 
     <!-- SHOP WIDGET PRODUTCS -->
     <section>
