@@ -4,15 +4,19 @@
 @section('content')
 
     <!-- Inspiro Slider -->
-    <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360" data-autoplay-timeout="2600" data-animate-in="fadeIn" data-animate-out="fadeOut" data-items="1" data-loop="true" data-autoplay="true">
+    <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360"
+         data-autoplay-timeout="2600" data-animate-in="fadeIn" data-animate-out="fadeOut" data-items="1"
+         data-loop="true" data-autoplay="true">
         <!-- Slide 1 -->
         <div class="slide" style="background-image:url({{asset('assets/homepages/shop-v3/images/1.jpg')}});">
             <div class="container">
                 <div class="slide-captions text-right">
                     <!-- Captions -->
-                    <h2 class="text-large">THE MOST<br />POPULAR BRAND</h2>
+                    <h2 class="text-large">THE MOST<br/>POPULAR BRAND</h2>
                     <a class="btn btn-light" href="#">Shop Now</a>
-                    <a class="btn btn-light btn-outline" href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View Collection</a>
+                    <a class="btn btn-light btn-outline"
+                       href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View
+                        Collection</a>
                     <!-- end: Captions -->
                 </div>
             </div>
@@ -23,9 +27,11 @@
             <div class="container">
                 <div class="slide-captions">
                     <!-- Captions -->
-                    <h2 class="text-large text-dark">HỌC SINH - SINH VIÊN<br />GIẢM NGAY 10%</h2>
+                    <h2 class="text-large text-dark">HỌC SINH - SINH VIÊN<br/>GIẢM NGAY 10%</h2>
                     <a class="btn btn-dark" href="#">Shop Now</a>
-                    <a class="btn btn-dark btn-outline" href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View Collection</a>
+                    <a class="btn btn-dark btn-outline"
+                       href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View
+                        Collection</a>
                     <!-- end: Captions -->
                 </div>
             </div>
@@ -39,7 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="hr-title hr-long center"><abbr>Sản phẩm nổi bật </abbr> </div>
+                    <div class="hr-title hr-long center"><abbr>Sản phẩm nổi bật </abbr></div>
 
                 </div>
             </div>
@@ -50,9 +56,11 @@
                         <div class="col-md-3">
                             <div class="product">
                                 <div class="product-image">
-                                    <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                    <a href="#"><img alt="Shop product image!"
+                                                     src="{{asset('assets/images/shop/products/1.jpg')}}">
                                     </a>
-                                    <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/10.jpg')}}">
+                                    <a href="#"><img alt="Shop product image!"
+                                                     src="{{asset('assets/images/shop/products/10.jpg')}}">
                                     </a>
                                     <span class="product-new">NEW</span>
                                     <span class="product-wishlist">
@@ -68,7 +76,8 @@
                                     <div class="product-title">
                                         <h3><a href="#">Bolt Sweatshirt</a></h3>
                                     </div>
-                                    <div class="product-price"><ins>$15.00</ins>
+                                    <div class="product-price">
+                                        <ins>$15.00</ins>
                                     </div>
                                     <div class="product-rate">
                                         <i class="fa fa-star"></i>
@@ -150,9 +159,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/1.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/10.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/10.jpg')}}">
                                 </a>
                                 <span class="product-new">NEW</span>
                                 <span class="product-wishlist">
@@ -168,7 +179,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Bolt Sweatshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$15.00</ins>
+                                <div class="product-price">
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -185,9 +197,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/2.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/2.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/6.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/6.jpg')}}">
                                 </a>
                                 <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
@@ -202,7 +216,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Consume Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -220,9 +235,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/3.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/3.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/7.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/7.jpg')}}">
                                 </a>
                                 <span class="product-hot">HOT</span>
                                 <span class="product-wishlist">
@@ -238,7 +255,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -256,9 +274,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/4.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/4.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/9.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/9.jpg')}}">
                                 </a>
                                 <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
@@ -273,7 +293,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Cotton Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$22.00</ins>
+                                <div class="product-price">
+                                    <ins>$22.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -291,9 +312,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/5.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/5.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/11.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/11.jpg')}}">
                                 </a>
                                 <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
@@ -308,7 +331,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Grey Sweatshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -326,9 +350,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/6.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/6.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/2.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/2.jpg')}}">
                                 </a>
                                 <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
@@ -344,7 +370,8 @@
                                     <h3><a href="#">Pocket Tshirt</a></h3>
                                 </div>
                                 <div class="product-price">
-                                    <del>$19.00</del><ins>$15.00</ins>
+                                    <del>$19.00</del>
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -362,9 +389,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/7.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/7.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/3.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/3.jpg')}}">
                                 </a>
                                 <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
@@ -379,7 +408,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Dark Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$26.00</ins>
+                                <div class="product-price">
+                                    <ins>$26.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -397,9 +427,11 @@
                     <div class="col-md-3">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/8.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/8.jpg')}}">
                                 </a>
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/1.jpg')}}">
                                 </a>
                                 <span class="product-sale">SALE</span>
                                 <span class="product-sale-off">50% Off</span>
@@ -417,7 +449,8 @@
                                     <h3><a href="#">Nature Tshirt</a></h3>
                                 </div>
                                 <div class="product-price">
-                                    <del>$19.00</del><ins>$15.00</ins>
+                                    <del>$19.00</del>
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -440,18 +473,31 @@
     <!-- end: Shop products -->
 
     <!-- SUMMER SALE -->
-    <section class="section-pattern p-t-60 p-b-30 text-center" style="background: url({{asset('assets/images/pattern/pattern22.png')}})">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5 text-left">
-                    <h2 class="text-medium">Summer Sale</h2>
-                    <p>Order more than 60$ and you will get free shippining Worldwide. <a href="#" class="read-more">More info</a></p>
+    <section class="section-pattern p-t-60 p-b-30 text-center"
+             style="background: url({{asset('assets/images/pattern/pattern22.png')}})">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 center-col margin-50px-bottom sm-margin-40px-bottom xs-margin-30px-bottom text-center">
+                        <h2 class="intro">Đăng ký nhận khuyến mãi</h2>
+                        <p class="width-50 sm-width-75 xs-width-95 center-col fadeInUp intro-contact">
+                            ĐĂNG KÝ NHẬN TIN KHUYẾN MẠI, CÁC Sản Phẩm HOT QUA EMAIL
+                            <br>
+                            Nhận thông tin khuyến mại, giảm giá, quà tặng sinh nhật hay các sản phẩm siêu hot từ BATDANGOAI
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-7">
-                    <div class="countdown medium" data-countdown="2018/02/19 11:34:51" data-animation="fadeInUp"></div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form class="form-inline text-center">
+                            <div class="form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="text" class="form-control" placeholder="Nhập email.">
+                            </div>
+                            <button class="btn btn-default" type="submit">Đăng ký ngay</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- end: SUMMER SALE -->
 
@@ -462,13 +508,14 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="heading-fancy heading-line">
-                        <h4>Top Rated</h4>
+                        <h4>Top Combo</h4>
                     </div>
 
                     <div class="widget-shop">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/10.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/10.jpg')}}">
                                 </a>
                             </div>
                             <div class="product-description">
@@ -476,7 +523,9 @@
                                 <div class="product-title">
                                     <h3><a href="#">Bolt Sweatshirt</a></h3>
                                 </div>
-                                <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
+                                <div class="product-price">
+                                    <del>$30.00</del>
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -489,7 +538,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/6.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/6.jpg')}}">
                                 </a>
                             </div>
 
@@ -498,7 +548,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Consume Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -512,7 +563,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/7.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/7.jpg')}}">
                                 </a>
                             </div>
 
@@ -521,7 +573,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -538,13 +591,14 @@
                 </div>
                 <div class="col-md-3">
                     <div class="heading-fancy heading-line">
-                        <h4>On Sale</h4>
+                        <h4>Top sản phẩm</h4>
                     </div>
 
                     <div class="widget-shop">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/11.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/11.jpg')}}">
                                 </a>
                             </div>
 
@@ -553,7 +607,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -566,7 +621,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/9.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/9.jpg')}}">
                                 </a>
                             </div>
 
@@ -575,7 +631,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Consume Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -589,7 +646,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/3.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/3.jpg')}}">
                                 </a>
                             </div>
 
@@ -598,7 +656,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -615,13 +674,14 @@
                 </div>
                 <div class="col-md-3">
                     <div class="heading-fancy heading-line">
-                        <h4>Recommended</h4>
+                        <h4>Sản phẩm dưới 50K</h4>
                     </div>
 
                     <div class="widget-shop">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/1.jpg')}}">
                                 </a>
                             </div>
                             <div class="product-description">
@@ -629,7 +689,9 @@
                                 <div class="product-title">
                                     <h3><a href="#">Bolt Sweatshirt</a></h3>
                                 </div>
-                                <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
+                                <div class="product-price">
+                                    <del>$30.00</del>
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -642,7 +704,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/2.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/2.jpg')}}">
                                 </a>
                             </div>
 
@@ -651,7 +714,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Consume Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -665,7 +729,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/5.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/5.jpg')}}">
                                 </a>
                             </div>
 
@@ -674,7 +739,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -692,13 +758,14 @@
                 </div>
                 <div class="col-md-3">
                     <div class="heading-fancy heading-line">
-                        <h4>Popular</h4>
+                        <h4>Ưa chuộng</h4>
                     </div>
 
                     <div class="widget-shop">
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/4.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/4.jpg')}}">
                                 </a>
                             </div>
                             <div class="product-description">
@@ -706,7 +773,9 @@
                                 <div class="product-title">
                                     <h3><a href="#">Bolt Sweatshirt</a></h3>
                                 </div>
-                                <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
+                                <div class="product-price">
+                                    <del>$30.00</del>
+                                    <ins>$15.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -719,7 +788,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/13.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/13.jpg')}}">
                                 </a>
                             </div>
 
@@ -728,7 +798,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Consume Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -742,7 +813,8 @@
                         </div>
                         <div class="product">
                             <div class="product-image">
-                                <a href="#"><img alt="Shop product image!" src="{{asset('assets/images/shop/products/8.jpg')}}">
+                                <a href="#"><img alt="Shop product image!"
+                                                 src="{{asset('assets/images/shop/products/8.jpg')}}">
                                 </a>
                             </div>
 
@@ -751,7 +823,8 @@
                                 <div class="product-title">
                                     <h3><a href="#">Logo Tshirt</a></h3>
                                 </div>
-                                <div class="product-price"><ins>$39.00</ins>
+                                <div class="product-price">
+                                    <ins>$39.00</ins>
                                 </div>
                                 <div class="product-rate">
                                     <i class="fa fa-star"></i>
@@ -772,58 +845,46 @@
     </section>
     <!-- end: SHOP WIDGET PRODUTCS -->
 
-    <!-- end: SHOP CATEGORIES -->
-    <section>
+    <!-- BLOG -->
+    <section id="section4" class="background-grey">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="hr-title hr-long center"><abbr>Browser our categories </abbr> </div>
-
-                </div>
+            <div class="heading heading-center m-b-40">
+                <h2 class="m-b-0">OUR BLOG</h2>
+                <span class="lead">We do blogging sometimes!</span>
             </div>
+            <div id="blog">
+                <!-- Blog post-->
+                <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
+                @for($i=0;$i<4;$i++)
+                    <!-- Post item-->
+                        <div class="post-item border">
+                            <div class="post-item-wrap">
+                                <div class="post-image">
+                                    <a href="#">
+                                        <img alt="" src="{{asset('assets/images/blog/12.jpg')}}">
+                                    </a>
+                                    <span class="post-meta-category"><a href="">Lifestyle</a></span>
+                                </div>
+                                <div class="post-item-description">
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
+                                    <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>
+                                    <h2><a href="#">Lighthouse, standard post with a single image
+                                        </a></h2>
+                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
+                                        commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
 
-            <div class="shop-category">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="shop-category-box">
-                            <a href="#"><img alt="" src="{{asset('assets/images/shop/shop-category/1.jpg')}}">
-                                <div class="shop-category-box-title text-center">
-                                    <h6>Women</h6><small>64 products</small>
+                                    <a href="#" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="shop-category-box">
-                            <a href="#"><img alt="" src="{{asset('assets/images/shop/shop-category/2.jpg')}}">
-                                <div class="shop-category-box-title text-center">
-                                    <h6>Wallet's</h6><small>36 products</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="shop-category-box">
-                            <a href="#"><img alt="" src="{{asset('assets/images/shop/shop-category/3.jpg')}}">
-                                <div class="shop-category-box-title text-center">
-                                    <h6>Man</h6><small>25 products</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="shop-category-box">
-                            <a href="#"><img alt="" src="{{asset('assets/images/shop/shop-category/4.jpg')}}">
-                                <div class="shop-category-box-title text-center">
-                                    <h6>Socks</h6><small>80 products</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                        <!-- end: Post item-->
+                    @endfor
                 </div>
+                <!-- end: Blog post-->
             </div>
         </div>
     </section>
-    <!-- end: SHOP CATEGORIES -->
+    <!-- end: BLOG -->
 
 @endsection

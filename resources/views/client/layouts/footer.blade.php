@@ -85,6 +85,9 @@
                     <!-- Footer widget area 4 -->
                     <div class="widget widget-tweeter" data-username="ardianmusliu" data-limit="2">
                         <h4>Map</h4>
+                        <div id="map-batdao">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1862.7433728123797!2d105.85015316910489!3d20.97311707914733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac442d30e95b%3A0x337ca3a2d41ba73!2zMjc1IFAuIEdpw6FwIE5o4buLLCBUaOG7i25oIExp4buHdCwgSGFpIELDoCBUcsawbmcsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1705314124348!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                     <!-- end: Footer widget area 4 -->
                 </div>
@@ -93,7 +96,7 @@
     </div>
     <div class="copyright-content">
         <div class="container">
-            <div class="copyright-text text-center">&copy; 2017 POLO - Responsive Multi-Purpose HTML5 Template. All Rights Reserved.<a href="http://www.inspiro-media.com" target="_blank">INSPIRO</a>
+            <div class="copyright-text text-center">&copy; 2024 Bạt dã ngoại . All Rights Reserved.
             </div>
         </div>
     </div>

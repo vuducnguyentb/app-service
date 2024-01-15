@@ -170,6 +170,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         #đăng ký repository service provider
         App\Providers\RepositoryServiceProvider::class,
+        #đăng ký header and footer serviceprovider
+        \App\Providers\HeaderServiceProvider::class,
+        \App\Providers\FooterServiceProvider::class
     ])->toArray(),
 
     /*

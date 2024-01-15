@@ -28,16 +28,16 @@
                         </a>
                         <!--end: top search-->
                     </li>
-                    <li class="hidden-xs">
-                        <!--shopping cart-->
-                        <div id="shopping-cart">
-                            <a href="shop-cart.html">
-                                <span class="shopping-cart-items">8</span>
+{{--                    <li class="hidden-xs">--}}
+{{--                        <!--shopping cart-->--}}
+{{--                        <div id="shopping-cart">--}}
+{{--                            <a href="shop-cart.html">--}}
+{{--                                <span class="shopping-cart-items">8</span>--}}
 
-                                <i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                        <!--end: shopping cart-->
-                    </li>
+{{--                                <i class="fa fa-shopping-cart"></i></a>--}}
+{{--                        </div>--}}
+{{--                        <!--end: shopping cart-->--}}
+{{--                    </li>--}}
 {{--                    Đa ngôn ngữ--}}
 {{--                    <li>--}}
 {{--                        <div class="topbar-dropdown">--}}
@@ -84,11 +84,11 @@
                             </li>
                             <li class="dropdown"> <a href="#">Hướng dẫn</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
+                                    <li class="dropdown-submenu"><a href="/tutorial"><i class="fa fa-heart"></i>Headers</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"> <a href="#">Tin tức</a>
+                            <li class="dropdown"> <a href="/news">Tin tức</a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
                                     </li>

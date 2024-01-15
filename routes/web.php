@@ -25,6 +25,7 @@ Route::get('/', function () {
 #Trang chủ
 Route::get('/','Client\HomeController@index')->name('home');
 
+
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');
 Route::post('/login','LoginController@checkLogin')->name('check-login');
