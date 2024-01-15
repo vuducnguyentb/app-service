@@ -36,7 +36,8 @@
 
 </div>
 <!-- end: Wrapper -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+@include('client.layouts.contact')
 <!-- Go to top button -->
 <a id="goToTop"><i class="fa fa-angle-up top-icon"></i><i class="fa fa-angle-up"></i></a>
 <!--Plugins-->
@@ -45,7 +46,6 @@
 
 <!--Template functions-->
 <script src="{{asset('assets/js/functions.js')}}"></script>
-
 </body>
 
 </html>
