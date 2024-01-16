@@ -849,7 +849,7 @@
     <section id="section4" class="background-grey">
         <div class="container">
             <div class="heading heading-center m-b-40">
-                <h2 class="m-b-0">OUR BLOG</h2>
+                <h2 class="m-b-0">TIN TỨC & SỰ KIỆN</h2>
                 <span class="lead">We do blogging sometimes!</span>
             </div>
             <div id="blog">
