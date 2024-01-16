@@ -3,7 +3,7 @@
         <div class="container">
             <!--Logo-->
             <div id="logo">
-                <a href="index.html" class="logo" data-dark-logo="images/logo-dark.png">
+                <a href="/" class="logo" data-dark-logo="images/logo-dark.png">
                     <img src="{{asset('assets/images/logo.png')}}" alt="Polo Logo">
                 </a>
             </div>
@@ -63,8 +63,8 @@
                 <div class="container">
                     <nav>
                         <ul>
-                            <li><a href="index.html">Trang chủ</a></li>
-                            <li class="dropdown"> <a href="#">Bảng giá cho thuê</a>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li class="dropdown"> <a href="bang-gia-cho-thue">Bảng giá cho thuê</a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
                                     </li>
@@ -72,14 +72,18 @@
                             </li>
                             <li class="dropdown"> <a href="#">Gói combo</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
+                                    @foreach($comboCategories as $key=>$item)
+                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>{{$item->name}}</a>
                                     </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown"> <a href="#">Sản phẩm</a>
                                 <ul class="dropdown-menu">
+                                    @foreach($productCategories as $key=>$item)
                                     <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
                                     </li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="dropdown"> <a href="#">Hướng dẫn</a>
