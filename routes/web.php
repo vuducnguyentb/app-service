@@ -25,6 +25,11 @@ Route::get('/', function () {
 #Trang chủ
 Route::get('/','Client\HomeController@index')->name('home');
 
+#ds mục tin tức
+Route::get('/tin-tuc','Client\NewController@index')->name('news');
+
+#tin tức chi tiết
+Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')->name('new-detail');
 
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');
