@@ -23,7 +23,7 @@ class NewController extends BaseWebController
     }
 
     public function index(Request $request){
-
+        return view('client.post.index');
     }
 
     public function getDetail($slug){

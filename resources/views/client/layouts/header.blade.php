@@ -88,7 +88,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"> <a href="/news">Tin tức</a>
+                            <li class="dropdown"> <a href="{{route('news')}}">Tin tức</a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
                                     </li>
