@@ -24,23 +24,26 @@
 
                     <!-- Blog -->
                     <div id="blog" class="post-thumbnails">
-                    @for($i=0;$i<4;$i++)
+                        @foreach($posts as $key=>$post)
                         <!-- Post item-->
                             <div class="post-item">
                                 <div class="post-item-wrap">
                                     <div class="post-image">
                                         <a href="#">
-                                            <img alt="" src="{{asset('assets/images/blog/12.jpg')}}">
+                                            @if($post->image)
+                                                <img src="{{asset('storage/'.$post->image)}}" alt="">
+                                            @else
+                                                <img alt="" src="{{asset('assets/images/blog/12.jpg')}}">
+                                            @endif
                                         </a>
-                                        <span class="post-meta-category"><a href="">Lifestyle</a></span>
+{{--                                        <span class="post-meta-category"><a href="">Lifestyle</a></span>--}}
                                     </div>
                                     <div class="post-item-description">
-                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
-                                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>
-                                        <h2><a href="#">Lighthouse, standard post with a single image
+                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{Carbon\Carbon::create($post->created_at)->format('d-m-Y')}}</span>
+{{--                                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>--}}
+                                        <h2><a href="#">{{$post->title}}
                                             </a></h2>
-                                        <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
-                                            commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
+                                        <p>{{$post->excerpt}}</p>
 
 {{--                                        <div class="post-author"><img src="images/blog/author2.jpg">--}}
 {{--                                            <p>by <a href="#">Ardian Musliu</a> 2 days ago </p></div>--}}
@@ -49,27 +52,28 @@
                                 </div>
                             </div>
                             <!-- end: Post item-->
-                        @endfor
+                            @endforeach
                     </div>
                     <!-- end: Blog -->
 
                     <!-- Pagination -->
                     <div class="pagination pagination-simple">
-                        <ul>
-                            <li>
-                                <a href="#" aria-label="Previous"> <span aria-hidden="true"><i
-                                            class="fa fa-angle-left"></i></span> </a>
-                            </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li class="active"><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li>
-                                <a href="#" aria-label="Next"> <span aria-hidden="true"><i
-                                            class="fa fa-angle-right"></i></span> </a>
-                            </li>
-                        </ul>
+                        {{ $posts->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
+{{--                        <ul>--}}
+{{--                            <li>--}}
+{{--                                <a href="#" aria-label="Previous"> <span aria-hidden="true"><i--}}
+{{--                                            class="fa fa-angle-left"></i></span> </a>--}}
+{{--                            </li>--}}
+{{--                            <li><a href="#">1</a></li>--}}
+{{--                            <li><a href="#">2</a></li>--}}
+{{--                            <li class="active"><a href="#">3</a></li>--}}
+{{--                            <li><a href="#">4</a></li>--}}
+{{--                            <li><a href="#">5</a></li>--}}
+{{--                            <li>--}}
+{{--                                <a href="#" aria-label="Next"> <span aria-hidden="true"><i--}}
+{{--                                            class="fa fa-angle-right"></i></span> </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </div>
                     <!-- end: Pagination -->
 

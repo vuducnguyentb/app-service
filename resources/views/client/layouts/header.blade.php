@@ -73,7 +73,7 @@
                             <li class="dropdown"> <a href="#">Gói combo</a>
                                 <ul class="dropdown-menu">
                                     @foreach($comboCategories as $key=>$item)
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>{{$item->name}}</a>
+                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -81,7 +81,7 @@
                             <li class="dropdown"> <a href="#">Sản phẩm</a>
                                 <ul class="dropdown-menu">
                                     @foreach($productCategories as $key=>$item)
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
+                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>

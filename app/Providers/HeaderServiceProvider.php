@@ -25,7 +25,8 @@ class HeaderServiceProvider extends ServiceProvider
             ->where('status',BaseEnum::Active)->get();
         $comboCategories = ProductCategory::where('type',BaseEnum::TypeCombo)
             ->where('status',BaseEnum::Active)->get();
-        view()->composer('client.layouts.header',function ($view) use($productCategories,$comboCategories){
+        view()->composer('client.layouts.header',
+            function ($view) use($productCategories,$comboCategories){
             $view->with([
                 'productCategories'=>$productCategories,
                 'comboCategories'=>$comboCategories,

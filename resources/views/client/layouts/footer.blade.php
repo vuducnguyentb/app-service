@@ -51,32 +51,19 @@
                 <div class="col-md-3">
                     <!-- Footer widget area 3 -->
                     <div class="widget">
-                        <h4>Latest From Our Blog</h4>
+                        <h4>Tin tức mới nhât.</h4>
                         <div class="post-thumbnail-list">
+                            @foreach($postNewFooters as $key=>$item)
                             <div class="post-thumbnail-entry">
-
                                 <div class="post-thumbnail-content">
-                                    <a href="#">Suspendisse consectetur fringilla luctus</a>
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
-                                    <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
+                                    <a href="#">{{$item['title']}}</a>
+                                    <span class="post-date"><i class="fa fa-clock-o"></i> {{$item['created_at']}}</span>
+                                    @foreach($item['categories'] as $key=>$value)
+                                    <span class="post-category"><i class="fa fa-tag"></i>{{$value['name']}}</span>
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="post-thumbnail-entry">
-
-                                <div class="post-thumbnail-content">
-                                    <a href="#">Consectetur adipiscing elit</a>
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> 24h ago</span>
-                                    <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
-                                </div>
-                            </div>
-                            <div class="post-thumbnail-entry">
-
-                                <div class="post-thumbnail-content">
-                                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
-                                    <span class="post-date"><i class="fa fa-clock-o"></i> 11h ago</span>
-                                    <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <!-- end: Footer widget area 3 -->
