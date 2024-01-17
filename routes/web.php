@@ -27,9 +27,13 @@ Route::get('/','Client\HomeController@index')->name('home');
 
 #ds mục tin tức
 Route::get('/tin-tuc','Client\NewController@index')->name('news');
+#thể loại tin tức
+Route::get('/tin/{slug}','Client\NewController@getCategory')
+    ->name('category-post');
 
 #tin tức chi tiết
-Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')->name('new-detail');
+Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')
+    ->name('new-detail');
 
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');

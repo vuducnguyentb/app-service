@@ -8,7 +8,7 @@
          data-autoplay-timeout="2600" data-animate-in="fadeIn" data-animate-out="fadeOut" data-items="1"
          data-loop="true" data-autoplay="true">
         <!-- Slide 1 -->
-        <div class="slide" style="background-image:url({{asset('assets/homepages/shop-v3/images/1.jpg')}});">
+        <div class="slide" style="background-image:url({{asset('assets/homepages/shop-v3/images/slider-bat.jpg')}});">
             <div class="container">
                 <div class="slide-captions text-right">
                     <!-- Captions -->
@@ -850,36 +850,39 @@
         <div class="container">
             <div class="heading heading-center m-b-40">
                 <h2 class="m-b-0">TIN TỨC & SỰ KIỆN</h2>
-                <span class="lead">We do blogging sometimes!</span>
+                <span class="lead">Tin tức mới nhất từ Bạt Dã Ngoại!</span>
             </div>
             <div id="blog">
                 <!-- Blog post-->
                 <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
-                @for($i=0;$i<4;$i++)
+                @foreach($postHomes as $key=>$item)
                     <!-- Post item-->
                         <div class="post-item border">
                             <div class="post-item-wrap">
                                 <div class="post-image">
-                                    <a href="#">
-                                        <img alt="" src="{{asset('assets/images/blog/12.jpg')}}">
+                                    <a href="{{route('new-detail',$item->slug)}}">
+                                        @if($item->image)
+                                            <img src="{{asset('storage/'.$item->image)}}" alt="">
+                                        @else
+                                            <img alt="" src="{{asset('assets/images/blog/12.jpg')}}">
+                                        @endif
                                     </a>
-                                    <span class="post-meta-category"><a href="">Lifestyle</a></span>
+{{--                                    <span class="post-meta-category"><a href="">Lifestyle</a></span>--}}
                                 </div>
                                 <div class="post-item-description">
-                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
-                                    <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>
-                                    <h2><a href="#">Lighthouse, standard post with a single image
+                                    <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{Carbon\Carbon::create($item->created_at)->format('d-m-Y')}}</span>
+{{--                                    <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>--}}
+                                    <h2><a href="{{route('new-detail',$item->slug)}}">{{$item->title}}
                                         </a></h2>
-                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus
-                                        commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet.</p>
+                                    <p>{{$item->excerpt}}</p>
 
-                                    <a href="#" class="item-link">Read More <i class="fa fa-arrow-right"></i></a>
+                                    <a href="{{route('new-detail',$item->slug)}}" class="item-link">Chi tiết <i class="fa fa-arrow-right"></i></a>
 
                                 </div>
                             </div>
                         </div>
                         <!-- end: Post item-->
-                    @endfor
+                    @endforeach
                 </div>
                 <!-- end: Blog post-->
             </div>

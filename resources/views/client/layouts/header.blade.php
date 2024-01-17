@@ -71,32 +71,40 @@
                                 </ul>
                             </li>
                             <li class="dropdown"> <a href="#">Gói combo</a>
+                                @if(!empty($comboCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($comboCategories as $key=>$item)
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
+                                    <li ><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
+                                @endif
                             </li>
                             <li class="dropdown"> <a href="#">Sản phẩm</a>
+                                @if(!empty($productCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($productCategories as $key=>$item)
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
+                                    <li ><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
+                                @endif
                             </li>
                             <li class="dropdown"> <a href="#">Hướng dẫn</a>
                                 <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu"><a href="/tutorial"><i class="fa fa-heart"></i>Headers</a>
+                                    <li ><a href="/tutorial"><i class="fa fa-heart"></i>Headers</a>
                                     </li>
                                 </ul>
                             </li>
                             <li class="dropdown"> <a href="{{route('news')}}">Tin tức</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
-                                    </li>
-                                </ul>
+                                @if(!empty($headerPostCategories))
+                                    <ul class="dropdown-menu">
+                                        @foreach($headerPostCategories as $key=>$item)
+                                            <li ><a href="{{route('category-post',$item->slug)}}"><i class="fa fa-newspaper-o"></i>{{$item->name}}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             </li>
                         </ul>
                     </nav>

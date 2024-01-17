@@ -10,12 +10,12 @@
                 <div class="content col-md-9">
                     <!-- Page title -->
                     <div class="page-title">
-                        <h1>Tin Tức Bạt Dã Ngoại</h1>
+                        <h1>Tin - {{$categoryPost->name}}</h1>
                         <div class="breadcrumb float-left">
                             <ul>
-                                <li><a href="/">Trang chủ</a>
+                                <li>Trang chủ
                                 </li>
-                                <li><a href="">Tin tức</a>
+                                <li>{{$categoryPost->name}}
                                 </li>
                             </ul>
                         </div>
@@ -24,7 +24,7 @@
 
                     <!-- Blog -->
                     <div id="blog" class="post-thumbnails">
-                        @foreach($posts as $key=>$post)
+                        @foreach($postInCategories as $key=>$post)
                         <!-- Post item-->
                             <div class="post-item">
                                 <div class="post-item-wrap">
@@ -60,7 +60,7 @@
 
                     <!-- Pagination -->
                     <div class="pagination pagination-simple">
-                        {{ $posts->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
+                        {{ $postInCategories->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                     </div>
                     <!-- end: Pagination -->
 
@@ -72,9 +72,9 @@
                     <div class="pinOnScroll">
                         <!--Tabs with Posts-->
                         <div class="widget ">
-                            <h4 class="widget-title">Bài viết mới</h4>
+                            <h4 class="widget-title">Bài viết khác</h4>
                             <div class="post-thumbnail-list">
-                                @foreach($randomPosts as $key=>$item)
+                                @foreach($postNotInCategories as $key=>$item)
                                 <div class="post-thumbnail-entry">
                                     @if($item->image)
                                         <img src="{{asset('storage/'.$item->image)}}" alt="">
