@@ -39,7 +39,7 @@ Route::get('/danh-sach-san-pham','Client\ProductClientController@index')
 Route::get('/danh-muc-san-pham/{slug}','Client\ProductClientController@getCategory')
     ->name('client.category-product');
 Route::get('/san-pham/{slug}','Client\ProductClientController@getDetail')
-    ->name('client.product-detail');
+    ->name('client.product-detail')->middleware('check.product.view');
 #combo
 Route::get('/combo-thue-bat','Client\ComboClientController@index')
     ->name('client.combo');

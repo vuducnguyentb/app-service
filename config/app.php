@@ -172,7 +172,7 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         #đăng ký header and footer serviceprovider
         \App\Providers\HeaderServiceProvider::class,
-        \App\Providers\FooterServiceProvider::class
+        \App\Providers\FooterServiceProvider::class,
     ])->toArray(),
 
     /*

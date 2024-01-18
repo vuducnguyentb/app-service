@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Client;
 
 use App\Enums\BaseEnum;
+use App\Events\ProductViews;
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Controllers\Controller;
 use App\Repositories\Product\IProductRepository;
 use App\Repositories\ProductCategory\IProductCategoryRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Event;
 
 class ProductClientController extends BaseWebController
 {
@@ -49,11 +51,16 @@ class ProductClientController extends BaseWebController
 
     public function getCategory($slug)
     {
+
         return view('client.product.category');
     }
 
     public function getDetail($slug)
     {
+        $product = $this->productRepository->model()
+            ->where('slug',$slug)
+            ->first();
+        \event(new ProductViews($product));
         return view('client.product.detail');
     }
 }
