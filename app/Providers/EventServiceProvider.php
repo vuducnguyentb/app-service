@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\ComboViews;
 use App\Events\ProductViews;
+use App\Listeners\PlusViewCombo;
 use App\Listeners\PlusViewProduct;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         ProductViews::class=>[
             PlusViewProduct::class
+        ],
+        ComboViews::class=>[
+            PlusViewCombo::class
         ]
     ];
 

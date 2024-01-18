@@ -46,7 +46,7 @@ Route::get('/combo-thue-bat','Client\ComboClientController@index')
 Route::get('/danh-muc-combo/{slug}','Client\ComboClientController@getCategory')
     ->name('client.category-combo');
 Route::get('/combo/{slug}','Client\ComboClientController@getDetail')
-    ->name('client.combo-detail');
+    ->name('client.combo-detail')->middleware('check.combo.view');
 
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');

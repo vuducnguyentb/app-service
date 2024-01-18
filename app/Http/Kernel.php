@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'check.product.view' => \App\Http\Middleware\CheckProductViews::class,
+        'check.combo.view' => \App\Http\Middleware\CheckComboViews::class,
     ];
 }
