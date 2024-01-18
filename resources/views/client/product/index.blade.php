@@ -157,7 +157,7 @@
                         @foreach($latestProducts as $key=>$item)
                         <div class="product">
                             <div class="product-image">
-                                <a href="#">
+                                <a href="{{route('client.product-detail',$item->slug)}}">
                                     @if($item->image)
                                         <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
                                     @else
