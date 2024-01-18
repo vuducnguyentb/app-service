@@ -31,6 +31,8 @@ return new class extends Migration
             $table->enum('freeship', ['active', 'in_active'])
                 ->default('in_active')
                 ->comment('Trạng thái:hoạt động và ngừng hoạt động');
+            $table->integer('views')->default(0)
+                ->comment('số lượt xem.');
 //            $table->integer('freeship')->default(0)
 //                ->comment('phí ship');
             $table->enum('is_hot', ['active', 'in_active'])

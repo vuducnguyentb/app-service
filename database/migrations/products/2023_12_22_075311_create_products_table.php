@@ -27,6 +27,8 @@ return new class extends Migration {
                 ->comment('ảnh sản phẩm');
             $table->integer('quantity')->default(0)
             ->comment('số lượng hiện có.');
+            $table->integer('views')->default(0)
+                ->comment('số lượt xem.');
             $table->integer('freeship')->default(0)
                 ->comment('phí ship');
             $table->enum('is_hot', ['active', 'in_active'])

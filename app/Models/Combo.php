@@ -65,6 +65,7 @@ class Combo extends Model
 		'quantity',
 		'freeship',
 		'is_hot',
+        'views',
 		'created_by',
 		'updated_by',
 		'deleted_by'

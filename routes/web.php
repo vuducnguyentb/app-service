@@ -30,10 +30,23 @@ Route::get('/tin-tuc','Client\NewController@index')->name('news');
 #thể loại tin tức
 Route::get('/tin/{slug}','Client\NewController@getCategory')
     ->name('category-post');
-
 #tin tức chi tiết
 Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')
     ->name('new-detail');
+#sản phẩm
+Route::get('/danh-sach-san-pham','Client\ProductClientController@index')
+    ->name('client.product');
+Route::get('/danh-muc-san-pham/{slug}','Client\ProductClientController@getCategory')
+    ->name('client.category-product');
+Route::get('/san-pham/{slug}','Client\ProductClientController@getDetail')
+    ->name('client.product-detail');
+#combo
+Route::get('/combo-thue-bat','Client\ComboClientController@index')
+    ->name('client.combo');
+Route::get('/danh-muc-combo/{slug}','Client\ComboClientController@getCategory')
+    ->name('client.category-combo');
+Route::get('/combo/{slug}','Client\ComboClientController@getDetail')
+    ->name('client.combo-detail');
 
 #Trang đăng nhập
 Route::get('/sign-in','LoginController@login')->name('login');

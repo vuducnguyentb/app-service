@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown"> <a href="#">Gói combo</a>
+                            <li class="dropdown"> <a href="{{route('client.combo')}}">Gói combo</a>
                                 @if(!empty($comboCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($comboCategories as $key=>$item)
@@ -80,7 +80,7 @@
                                 </ul>
                                 @endif
                             </li>
-                            <li class="dropdown"> <a href="#">Sản phẩm</a>
+                            <li class="dropdown"> <a href="{{route('client.product')}}">Sản phẩm</a>
                                 @if(!empty($productCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($productCategories as $key=>$item)
