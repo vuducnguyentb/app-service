@@ -53,6 +53,11 @@ Route::get('/sign-in','LoginController@login')->name('login');
 Route::post('/login','LoginController@checkLogin')->name('check-login');
 Route::get('/logout','LoginController@logout')->name('logout');
 
+#Trang page
+Route::get('/p/{slug}','Client\PageClientController@getDetail')
+->name('client.page');
+
+
 #Các route trang quản trị
 Route::prefix('admin')
     ->middleware([

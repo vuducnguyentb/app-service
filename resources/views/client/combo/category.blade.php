@@ -7,18 +7,8 @@
     <section id="page-title" data-parallax-image="images/parallax/5.jpg">
         <div class="container">
             <div class="page-title">
-                <h1>BatDaNgoai</h1>
-                <span>Quý khách vui lòng đến cửa hàng nếu muốn thuê nhiều sản phẩm để được giá ưu đãi tốt nhất</span>
-            </div>
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="/">Trang chủ</a>
-                    </li>
-                    <li><a href="#">Danh Mục {{$categoryProduct->name}}</a>
-                    </li>
-                    <li class="active"><a href="#">Sidebar Left</a>
-                    </li>
-                </ul>
+                <h1>Danh mục {{$categoryProduct->name}}</h1>
+                <span>{{$categoryProduct->meta_description}}</span>
             </div>
         </div>
     </section>
@@ -30,53 +20,14 @@
             <div class="row">
                 <!-- Content-->
                 <div class="content col-md-9">
-                    <div class="row m-b-20">
-                        <div class="col-md-6 p-t-10 m-b-20">
-                            <h3 class="m-b-20">A Monochromatic Spring ’15</h3>
-                            <p>Lorem ipsum dolor sit amet. Accusamus, sit, exercitationem, consequuntur, assumenda iusto
-                                eos commodi alias.</p>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="order-select">
-                                <h6>Sort by</h6>
-                                <p>Showing 1&ndash;12 of 25 results</p>
-                                <form method="get">
-                                    <select>
-                                        <option selected="selected" value="order">Default sorting</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="rating">Sort by average rating</option>
-                                        <option value="date">Sort by newness</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="order-select">
-                                <h6>Sort by Price</h6>
-                                <p>From 0 - 190$</p>
-                                <form method="get">
-                                    <select>
-                                        <option selected="selected" value="">0$ - 50$</option>
-                                        <option value="">51$ - 90$</option>
-                                        <option value="">91$ - 120$</option>
-                                        <option value="">121$ - 200$</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
                     <!--Product list-->
                     <div class="shop">
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
-                            @foreach($products as $key=>$item)
+                            @foreach($combos as $key=>$item)
                                 <div class="grid-item">
                                     <div class="product">
                                         <div class="product-image">
-                                            <a href="{{route('client.product-detail',$item->slug)}}">
+                                            <a href="{{route('client.combo-detail',$item->slug)}}">
                                                 @if($item->image)
                                                     <img src="{{asset('storage/'.$item->image)}}" alt="">
                                                 @else
@@ -99,11 +50,15 @@
                                             <div class="product-category">{{$item->productCategory->name}}</div>
                                             <div class="product-title">
                                                 <h3>
-                                                    <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
+                                                    <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
                                                 </h3>
                                             </div>
                                             <div class="product-price">
-                                                <ins>$15.00</ins>
+                                                @if(!empty($item->productPrices->toArray()))
+                                                    <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
+                                                @else
+                                                    <ins class="text-danger">Liên hệ</ins>
+                                                @endif
                                             </div>
                                             <div class="product-rate">
                                                 <i class="fa fa-star"></i>
@@ -121,7 +76,7 @@
                         </div>
                         <hr>
                         <div>
-                            {{ $products->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
+                            {{ $combos->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                         </div>
                         <!-- Pagination -->
                     {{--                        <div class="pagination">--}}
@@ -149,7 +104,7 @@
                 <div class="sidebar col-md-3">
                     <!--widget newsletter-->
                     <div class="widget clearfix widget-archive">
-                        <h4 class="widget-title">Danh mục sản phẩm</h4>
+                        <h4 class="widget-title">Danh mục combo</h4>
                         <ul class="list list-lines">
                             @foreach($categories as $key=>$item)
                                 @if($item->id == $categoryProduct->id)
@@ -157,7 +112,7 @@
                                 @else
                                     <li>
                                         @endif
-                                        <a href="{{route('client.category-product',$item->slug)}}">
+                                        <a href="{{route('client.category-combo',$item->slug)}}">
                                             {{$item->name}}
                                         </a>
                                         <span class="count">({{$item->products_count}})</span>
@@ -166,11 +121,11 @@
                         </ul>
                     </div>
                     <div class="widget clearfix widget-shop">
-                        <h4 class="widget-title">Latest Products</h4>
-                        @foreach($latestProducts as $key=>$item)
+                        <h4 class="widget-title">Combo mới</h4>
+                        @foreach($latestCombos as $key=>$item)
                             <div class="product">
                                 <div class="product-image">
-                                    <a href="{{route('client.product-detail',$item->slug)}}">
+                                    <a href="{{route('client.combo-detail',$item->slug)}}">
                                         @if($item->image)
                                             <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
                                         @else
@@ -182,12 +137,15 @@
                                 <div class="product-description">
                                     <div class="product-category">{{$item->productCategory->name}}</div>
                                     <div class="product-title">
-                                        <h3><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
+                                        <h3><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
                                         </h3>
                                     </div>
                                     <div class="product-price">
-                                        <del>$30.00</del>
-                                        <ins>$15.00</ins>
+                                        @if(!empty($item->productPrices->toArray()))
+                                            <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}}</span></ins>
+                                        @else
+                                            <ins class="text-danger">Liên hệ</ins>
+                                        @endif
                                     </div>
                                     <div class="product-rate">
                                         <i class="fa fa-star"></i>
@@ -200,35 +158,35 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="widget clearfix widget-tags">
-                        <h4 class="widget-title">Tags</h4>
-                        <div class="tags">
-                            <a href="#">Design</a>
-                            <a href="#">Portfolio</a>
-                            <a href="#">Digital</a>
-                            <a href="#">Branding</a>
-                            <a href="#">HTML</a>
-                            <a href="#">Clean</a>
-                            <a href="#">Peace</a>
-                            <a href="#">Love</a>
-                            <a href="#">CSS3</a>
-                            <a href="#">jQuery</a>
-                        </div>
-                    </div>
-                    <div class="widget clearfix widget-newsletter">
-                        <form class="form-inline" method="get" action="#">
-                            <h4 class="widget-title">Subscribe for Latest Offers</h4>
-                            <small>Subscribe to our Newsletter to get Sales Offers &amp; Coupon Codes etc.</small>
-                            <div class="input-group">
+{{--                    <div class="widget clearfix widget-tags">--}}
+{{--                        <h4 class="widget-title">Tags</h4>--}}
+{{--                        <div class="tags">--}}
+{{--                            <a href="#">Design</a>--}}
+{{--                            <a href="#">Portfolio</a>--}}
+{{--                            <a href="#">Digital</a>--}}
+{{--                            <a href="#">Branding</a>--}}
+{{--                            <a href="#">HTML</a>--}}
+{{--                            <a href="#">Clean</a>--}}
+{{--                            <a href="#">Peace</a>--}}
+{{--                            <a href="#">Love</a>--}}
+{{--                            <a href="#">CSS3</a>--}}
+{{--                            <a href="#">jQuery</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <div class="widget clearfix widget-newsletter">--}}
+{{--                        <form class="form-inline" method="get" action="#">--}}
+{{--                            <h4 class="widget-title">Subscribe for Latest Offers</h4>--}}
+{{--                            <small>Subscribe to our Newsletter to get Sales Offers &amp; Coupon Codes etc.</small>--}}
+{{--                            <div class="input-group">--}}
 
-                                <input type="email" placeholder="Enter your Email" class="form-control required email"
-                                       name="widget-subscribe-form-email" aria-required="true">
-                                <span class="input-group-btn">
-										<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane"></i></button>
-									</span>
-                            </div>
-                        </form>
-                    </div>
+{{--                                <input type="email" placeholder="Enter your Email" class="form-control required email"--}}
+{{--                                       name="widget-subscribe-form-email" aria-required="true">--}}
+{{--                                <span class="input-group-btn">--}}
+{{--										<button type="submit" class="btn btn-default"><i class="fa fa-paper-plane"></i></button>--}}
+{{--									</span>--}}
+{{--                            </div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
 
 
                 </div>
@@ -240,23 +198,23 @@
 
 
     <!-- DELIVERY INFO -->
-    <section class="background-grey p-t-40 p-b-0">
-        <div class="container">
-            <div class="row">
-                @for($i=0;$i<3;$i++)
-                    <div class="col-md-4">
-                        <div class="icon-box effect small clean">
-                            <div class="icon">
-                                <a href="#"><i class="fa fa-gift"></i></a>
-                            </div>
-                            <h3>Free shipping on orders $60+</h3>
-                            <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
-                        </div>
-                    </div>
-                @endfor
-            </div>
-        </div>
-    </section>
+{{--    <section class="background-grey p-t-40 p-b-0">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                @for($i=0;$i<3;$i++)--}}
+{{--                    <div class="col-md-4">--}}
+{{--                        <div class="icon-box effect small clean">--}}
+{{--                            <div class="icon">--}}
+{{--                                <a href="#"><i class="fa fa-gift"></i></a>--}}
+{{--                            </div>--}}
+{{--                            <h3>Free shipping on orders $60+</h3>--}}
+{{--                            <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                @endfor--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
     <!-- end: DELIVERY INFO -->
 
 

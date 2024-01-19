@@ -6,6 +6,7 @@ use App\Enums\BaseEnum;
 use App\Events\ProductViews;
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Controllers\Controller;
+use App\Repositories\Combo\IComboRepository;
 use App\Repositories\Product\IProductRepository;
 use App\Repositories\ProductCategory\IProductCategoryRepository;
 use Illuminate\Http\Request;
@@ -15,14 +16,17 @@ class ProductClientController extends BaseWebController
 {
     protected $productRepository;
     protected $categoryRepository;
+    protected $comboRepository;
 
     public function __construct(
         IProductCategoryRepository $categoryRepository,
-        IProductRepository $productRepository
+        IProductRepository $productRepository,
+    IComboRepository $comboRepository
     )
     {
         $this->productRepository = $productRepository;
         $this->categoryRepository = $categoryRepository;
+        $this->comboRepository = $comboRepository;
     }
 
     public function index(Request $request)
@@ -41,6 +45,8 @@ class ProductClientController extends BaseWebController
             ->where('status',BaseEnum::Active)
             ->orderBy('created_at','ASC')
             ->take(3)->get();
+//        dd(number_format('20000', 0, ',', '.'));
+//        dd($products[0]->productPrices[0]->price);
         return view('client.product.index')->with(
             [
                 'categories'=>$categories,
@@ -86,11 +92,16 @@ class ProductClientController extends BaseWebController
             ->where('product_category_id',$product->productCategory->id)
             ->take(3)
             ->get();
+        $combos = $this->comboRepository->model()
+            ->with(['productPrices','productCategory'])
+            ->take(3)
+            ->get();
         \event(new ProductViews($product));
         return view('client.product.detail')->with(
             [
                 'product'=>$product,
                 'relatedProducts'=>$relatedProducts,
+                'combos'=>$combos,
             ]
         );
     }

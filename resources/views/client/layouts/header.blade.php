@@ -64,11 +64,11 @@
                     <nav>
                         <ul>
                             <li><a href="/">Trang chủ</a></li>
-                            <li class="dropdown"> <a href="bang-gia-cho-thue">Bảng giá cho thuê</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>
-                                    </li>
-                                </ul>
+                            <li class="dropdown"> <a href="{{route('client.page','bang-gia-cho-thue')}}">Bảng giá cho thuê</a>
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li class="dropdown-submenu"><a href="#"><i class="fa fa-heart"></i>Headers</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
                             </li>
                             <li class="dropdown"> <a href="{{route('client.combo')}}">Gói combo</a>
                                 @if(!empty($comboCategories))
@@ -90,11 +90,11 @@
                                 </ul>
                                 @endif
                             </li>
-                            <li class="dropdown"> <a href="#">Hướng dẫn</a>
-                                <ul class="dropdown-menu">
-                                    <li ><a href="/tutorial"><i class="fa fa-heart"></i>Headers</a>
-                                    </li>
-                                </ul>
+                            <li class="dropdown"> <a href="{{route('client.page','huong-dan')}}">Hướng dẫn</a>
+{{--                                <ul class="dropdown-menu">--}}
+{{--                                    <li ><a href="/tutorial"><i class="fa fa-heart"></i>Headers</a>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
                             </li>
                             <li class="dropdown"> <a href="{{route('news')}}">Tin tức</a>
                                 @if(!empty($headerPostCategories))
