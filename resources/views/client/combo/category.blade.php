@@ -29,9 +29,9 @@
                                         <div class="product-image">
                                             <a href="{{route('client.combo-detail',$item->slug)}}">
                                                 @if($item->image)
-                                                    <img src="{{asset('storage/'.$item->image)}}" alt="">
+                                                    <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
                                                 @else
-                                                    <img alt="Shop product image!"
+                                                    <img alt="{{$item->name}}"
                                                          src="{{asset('assets/images/shop/products/1.jpg')}}">
                                                 @endif
                                             </a>

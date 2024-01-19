@@ -7,25 +7,25 @@
             <span class="fab-title">Tìm cửa hàng</span>
             <div class="fab-button fab-button-1"><i class="icon-cps-local"></i></div>
         </a> --}}
-        <a class="fab-action fab-action-2" href="tel:xxx" rel="nofollow" title="Gọi trực tiếp">
+        <a class="fab-action fab-action-2" href="tel:0904779796" rel="nofollow" title="Gọi trực tiếp">
             <span class="fab-title">Gọi trực tiếp</span>
             <div class="fab-button fab-button-2"><i class="icon-cps-phone"></i></div>
         </a>
-        <a class="fab-action fab-action-3" href="https://zalo.me/xxx" target="_blank" rel="nofollow" title="Chat trên zalo">
-            <span class="fab-title">Chat trên Zalo account 1</span>
+        <a class="fab-action fab-action-3" href="https://zalo.me/0904779796" target="_blank" rel="nofollow" title="Chat trên zalo">
+            <span class="fab-title">0904.779.796</span>
             <div class="fab-button fab-button-4"><i class="icon-cps-chat-zalo"></i></div>
         </a>
-        <a class="fab-action fab-action-4" href="https://zalo.me/xxx" target="_blank" rel="nofollow" title="Chat trên zalo">
-            <span class="fab-title">Chat trên Zalo account 2</span>
+        <a class="fab-action fab-action-4" href="https://zalo.me/0967277142" target="_blank" rel="nofollow" title="Chat trên zalo">
+            <span class="fab-title">0967.277.142</span>
             <div class="fab-button fab-button-4"><i class="icon-cps-chat-zalo"></i></div>
         </a>
     </div>
-    <div class="suggestions-box">
-        <div class="suggestions-chat-box">
-            <i class="icon-cps-close" id="btnClose" onclick="$('.suggestions-box').hide()"></i>
-            <span>Chúng tôi ở đây và luôn sẵn sàng hỗ trợ và tư vấn cho quý khách. Đừng ngần ngại, hãy liên hệ với chúng tôi nếu bạn cần :)</span>
-        </div>
-    </div>
+{{--    <div class="suggestions-box">--}}
+{{--        <div class="suggestions-chat-box">--}}
+{{--            <i class="icon-cps-close" id="btnClose" onclick="$('.suggestions-box').hide()"></i>--}}
+{{--            <span>Liên hệ Zalo.    </span>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="devvn_bg"></div>
 </div>
 <style>
@@ -163,7 +163,7 @@
         background-position: -51px -49px;
     }
     .fab-wheel .fab-action-3 {
-        left: 0px;
+        left: 80px;
         bottom: 70px;
     }
     .fab-wheel .fab-button-3 {
@@ -175,7 +175,7 @@
         background-position: -369px 0px;
     }
     .fab-wheel .fab-action-4 {
-        left: 0;
+        left: 110px;
         bottom: 0;
     }
     .fab-wheel .fab-button-4 {

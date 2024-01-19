@@ -15,4 +15,7 @@ final class BaseEnum extends Enum
     const TypeCombo = 'combo';
     const Active = 'active';
     const InActive = 'in_active';
+    const IsHot = 'active';
+    const NotHot = 'in_active';
+
 }
