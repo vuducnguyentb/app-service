@@ -64,7 +64,6 @@ class Product extends Model
 		'image',
 		'quantity',
 		'freeship',
-        'views',
         'is_hot',
 		'created_by',
 		'updated_by',

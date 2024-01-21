@@ -125,7 +125,7 @@
             <td class="jsgrid-cell">
                 <input class="note-image-input form-control-file note-form-control note-input"
                        type="file" name="items[#xxxx#][image]" accept="image/*" multiple="multiple">
-                <img src="" alt="" name="items[#xxxx#][url]" id="url_#xxxx#" style="width: 100px">
+                <img src="" alt="" name="items[#xxxx#][url]" id="url_#xxxx#" style="width: 100px;height: auto">
             </td>
             <td class="jsgrid-cell">
                 <input type="button" value="Delete" class="btn btn-danger"

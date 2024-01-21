@@ -93,7 +93,7 @@
                                                 </h3>
                                             </div>
                                             <div class="product-price">
-                                                @if(!empty($item->productPrices))
+                                                @if(!empty($item->productPrices->toArray()))
                                                     <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}}</span></ins>
                                                 @else
                                                     <ins class="text-danger">Liên hệ</ins>

@@ -47,7 +47,7 @@
                                 <h3>{{$product->name}}</h3>
                             </div>
                             <div class="product-price">
-                                @if(!empty($product->productPrices))
+                                @if(!empty($product->productPrices->toArray()))
                                     <ins><span class="text-danger">{{number_format($product->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
                                 @else
                                     <ins><span class="text-danger">Liên hệ</span></ins>
@@ -169,6 +169,7 @@
                 <h4>Sản phẩm liên quan!</h4>
             </div>
             <div class="row">
+                @if(!empty($relatedProducts->toArray()))
                 <div class="col-md-6">
                     <div class="widget-shop">
                         @foreach($relatedProducts as $key=>$item)
@@ -189,7 +190,7 @@
                                     <h3><a href="#">{{$item->name}}</a></h3>
                                 </div>
                                 <div class="product-price">
-                                    @if(!empty($item->productPrices))
+                                    @if(!empty($item->productPrices->toArray()))
                                         <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}}</span></ins>
                                     @else
                                         <ins class="text-danger">Liên hệ</ins>
@@ -207,9 +208,9 @@
                         @endforeach
                     </div>
                 </div>
+                @endif
+                @if(!empty($combos->toArray()))
                 <div class="col-md-6">
-
-
                     <div class="widget-shop">
                         @foreach($combos as $key=>$item)
 
@@ -248,7 +249,7 @@
                         @endforeach
                     </div>
                 </div>
-
+                @endif
             </div>
         </div>
     </section>

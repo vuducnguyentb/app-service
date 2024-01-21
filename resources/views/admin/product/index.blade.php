@@ -63,7 +63,7 @@
                                             <td>{{$i}}</td>
                                             <td>
                                                 @if($item['image'])
-                                                    <img src="{{asset('storage/'.$item['image'])}}" alt="">
+                                                    <img src="{{asset('storage/'.$item['image'])}}" alt="" width="50px">
                                                 @endif
                                             </td>
                                             <td>{{$item['name']}}</td>
