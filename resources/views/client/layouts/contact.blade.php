@@ -7,12 +7,12 @@
             <span class="fab-title">Tìm cửa hàng</span>
             <div class="fab-button fab-button-1"><i class="icon-cps-local"></i></div>
         </a> --}}
-        <a class="fab-action fab-action-2" href="tel:0904779796" rel="nofollow" title="Gọi trực tiếp">
+        <a class="fab-action fab-action-2" href="tel:0966681891" rel="nofollow" title="Gọi trực tiếp">
             <span class="fab-title">Gọi trực tiếp</span>
             <div class="fab-button fab-button-2"><i class="icon-cps-phone"></i></div>
         </a>
-        <a class="fab-action fab-action-3" href="https://zalo.me/0904779796" target="_blank" rel="nofollow" title="Chat trên zalo">
-            <span class="fab-title">0904.779.796</span>
+        <a class="fab-action fab-action-3" href="https://zalo.me/0966681891" target="_blank" rel="nofollow" title="Chat trên zalo">
+            <span class="fab-title">0966.681.891</span>
             <div class="fab-button fab-button-4"><i class="icon-cps-chat-zalo"></i></div>
         </a>
         <a class="fab-action fab-action-4" href="https://zalo.me/0967277142" target="_blank" rel="nofollow" title="Chat trên zalo">

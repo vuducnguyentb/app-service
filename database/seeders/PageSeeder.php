@@ -28,6 +28,27 @@ class PageSeeder extends Seeder
                 'body'=>'',
                 'image'=>'',
             ],
+            [
+                'title'=>'Giới thiệu về chúng tôi',
+                'slug'=>'gioi-thieu',
+                'excerpt'=>'',
+                'body'=>'',
+                'image'=>'',
+            ],
+            [
+                'title'=>'Quy định hình thức thanh toán',
+                'slug'=>'quy-dinh',
+                'excerpt'=>'',
+                'body'=>'',
+                'image'=>'',
+            ],
+            [
+                'title'=>'Chính sách vận chuyển,giao nhận',
+                'slug'=>'chinh-sach',
+                'excerpt'=>'',
+                'body'=>'',
+                'image'=>'',
+            ],
 
         ];
         foreach ($arrays as $item){

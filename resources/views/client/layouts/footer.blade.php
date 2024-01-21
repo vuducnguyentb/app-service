@@ -7,10 +7,10 @@
                     <div class="widget clearfix widget-contact-us" style="background-image: url('images/world-map-dark.png'); background-position: 50% 20px; background-repeat: no-repeat">
                         <h4>Thông tin BATDANGOAI</h4>
                         <ul class="list-icon">
-                            <li><i class="fa fa-map-marker"></i>275 ngõ 141 Giáp Nhị - Thịnh Liệt - Hoàng Mai
+                            <li><i class="fa fa-map-marker"></i>237 Ngõ 141 Giáp Nhị - Thịnh Liệt - Hoàng Mai
                                 <br>(Cạnh đầu sông Sét)</li>
-                            <li><i class="fa fa-phone"></i> 0904.779.796 </li>
-                            <li><i class="fa fa-envelope"></i> <a href="mailto:first.last@example.com">first.last@example.com</a>
+                            <li><i class="fa fa-phone"></i> 0904.779.796 - 0967.277.142</li>
+                            <li><i class="fa fa-envelope"></i> <a href="mailto:first.last@example.com">batdangoai@gmail.com</a>
                             </li>
                             <li>
                                 <br><i class="fa fa-clock-o"></i>Thứ 2- Chủ Nhật: <strong>08:00 - 22:00</strong>
@@ -36,14 +36,13 @@
                 <div class="col-md-2">
                     <!-- Footer widget area 2 -->
                     <div class="widget">
-                        <h4>Quick LInks</h4>
+                        <h4>THÔNG TIN CHÍNH SÁCH</h4>
                         <ul class="list-icon list-icon-arrow">
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Portfolio</a></li>
-                            <li><a href="#">Shortcodes</a></li>
+                            <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="/quy-dinh">Quy định hình thức thanh toán</a></li>
+                            <li><a href="/chinh-sach">Chính sách vận chuyển,giao nhận</a></li>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li><a href="{{route('news')}}">Tin tức</a></li>
                         </ul>
                     </div>
                     <!-- end: Footer widget area 2 -->
