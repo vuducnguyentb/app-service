@@ -1,4 +1,21 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{$combo->name}}</title>
+    <meta name="description" content="{{$combo->meta_description}}">
+    <meta property="og:title" content="{{$combo->title}}">
+    <meta property="og:description" content="{{$combo->meta_description}}">
+    <meta property="og:url" content="{{route('client.combo-detail',$page->slug)}}">
+    <meta name="twitter:title" content=" {{$combo->name}}">
+    <meta name="twitter:description" content="{{$combo->meta_description}}">
+    @if($combo->image)
+        <meta property="og:image" content="{{asset('storage/'.$combo->image)}}">
+        <meta name="twitter:image" content="{{asset('storage/'.$combo->image)}}">
+    @else
+        <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+        <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')

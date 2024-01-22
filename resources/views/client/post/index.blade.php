@@ -1,4 +1,16 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{config('batdangoai')['seo']['index-post']['title']}}</title>
+    <meta name="description" content="{{config('batdangoai')['seo']['index-post']['description']}}">
+    <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    <meta property="og:title" content="{{config('batdangoai')['seo']['index-post']['title']}}">
+    <meta property="og:description" content="{{config('batdangoai')['seo']['index-post']['description']}}">
+    <meta property="og:url" content="{{route('news')}}">
+    <meta name="twitter:title" content="{{config('batdangoai')['seo']['index-post']['title']}}">
+    <meta name="twitter:description" content="{{config('batdangoai')['seo']['index-post']['description']}}">
+    <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class InvoiceDetail
- * 
+ *
  * @property int $id
  * @property int|null $invoice_id
  * @property int|null $quantity
@@ -26,14 +26,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Invoice|null $invoice
  *
  * @package App\Models
  */
-class InvoiceDetail extends Model
+class InvoiceDetail extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'invoice_details';
 
 	protected $casts = [

@@ -1,4 +1,21 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{$product->name}}</title>
+    <meta name="description" content="{{$product->meta_description}}">
+    <meta property="og:title" content="{{$product->title}}">
+    <meta property="og:description" content="{{$product->meta_description}}">
+    <meta property="og:url" content="{{route('client.product-detail',$product->slug)}}">
+    <meta name="twitter:title" content=" {{$product->name}}">
+    <meta name="twitter:description" content="{{$product->meta_description}}">
+    @if($product->image)
+        <meta property="og:image" content="{{asset('storage/'.$product->image)}}">
+        <meta name="twitter:image" content="{{asset('storage/'.$product->image)}}">
+    @else
+        <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+        <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')

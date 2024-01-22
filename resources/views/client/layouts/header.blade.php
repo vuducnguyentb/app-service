@@ -12,7 +12,7 @@
             <!--Top Search Form-->
             <div id="top-search">
                 <form action="search-results-page.html" method="get">
-                    <input type="text" name="q" class="form-control" value="" placeholder="Start typing & press  &quot;Enter&quot;">
+                    <input type="text" name="searchWord" class="form-control" value="" placeholder="Tìm kiếm sản phẩm.">
                 </form>
             </div>
             <!--end: Top Search Form-->

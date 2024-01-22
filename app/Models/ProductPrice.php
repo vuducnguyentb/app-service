@@ -28,9 +28,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class ProductPrice extends Model
+class ProductPrice extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'product_prices';
 
 	protected $casts = [

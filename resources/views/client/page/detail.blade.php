@@ -1,4 +1,21 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{$page->title}}</title>
+    <meta name="description" content="{{$page->meta_description}}">
+        <meta property="og:title" content="{{$page->title}}">
+        <meta property="og:description" content="{{$page->meta_description}}">
+        <meta property="og:url" content="{{route('client.page',$page->slug)}}">
+        <meta name="twitter:title" content=" {{$page->title}}">
+        <meta name="twitter:description" content="{{$page->meta_description}}">
+    @if($page->image)
+        <meta property="og:image" content="{{asset('storage/'.$page->image)}}">
+        <meta name="twitter:image" content="{{asset('storage/'.$page->image)}}">
+    @else
+        <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+        <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    @endif
+        <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')

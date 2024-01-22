@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ProductCategory
- * 
+ *
  * @property int $id
  * @property string $code
  * @property string $name
@@ -28,15 +28,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Combo[] $combos
  * @property Collection|Product[] $products
  *
  * @package App\Models
  */
-class ProductCategory extends Model
+class ProductCategory extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'product_categories';
 
 	protected $casts = [

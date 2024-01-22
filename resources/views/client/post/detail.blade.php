@@ -1,4 +1,21 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{$post->title}}</title>
+    <meta name="description" content="{{$post->meta_description}}">
+    <meta property="og:title" content="{{$post->title}}">
+    <meta property="og:description" content="{{$post->meta_description}}">
+    <meta property="og:url" content="{{route('new-detail',$post->slug)}}">
+    <meta name="twitter:title" content=" {{$post->title}}">
+    <meta name="twitter:description" content="{{$post->meta_description}}">
+    @if($post->image)
+        <meta property="og:image" content="{{asset('storage/'.$post->image)}}">
+        <meta name="twitter:image" content="{{asset('storage/'.$post->image)}}">
+    @else
+        <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+        <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    @endif
+    <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')
@@ -20,28 +37,16 @@
                                     </a>
                                 </div>
                                 <div class="post-item-description">
-                                    <h2>Lighthouse, standard post with a single image</h2>
+                                    <h2>{{$post->title}}</h2>
                                     <div class="post-meta">
 
-                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>Jan 21, 2017</span>
+                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{Carbon\Carbon::create($post->created_at)->format('d-m-Y')}}</span>
                                         <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>
                                         <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>Lifestyle, Magazine</a></span>
                                         <div class="post-meta-share">
                                             <a class="btn btn-xs btn-slide btn-facebook" href="#">
                                                 <i class="fa fa-facebook"></i>
                                                 <span>Facebook</span>
-                                            </a>
-                                            <a class="btn btn-xs btn-slide btn-twitter" href="#" data-width="100">
-                                                <i class="fa fa-twitter"></i>
-                                                <span>Twitter</span>
-                                            </a>
-                                            <a class="btn btn-xs btn-slide btn-instagram" href="#" data-width="118">
-                                                <i class="fa fa-instagram"></i>
-                                                <span>Instagram</span>
-                                            </a>
-                                            <a class="btn btn-xs btn-slide btn-googleplus" href="mailto:#" data-width="80">
-                                                <i class="fa fa-envelope"></i>
-                                                <span>Mail</span>
                                             </a>
                                         </div>
                                     </div>
@@ -76,73 +81,61 @@
                     <div class="pinOnScroll">
                         <!--Tabs with Posts-->
                         <div class="widget ">
-                            <h4 class="widget-title">Recent Posts</h4>
+                            <h4 class="widget-title">Tin tức gần đây.</h4>
                             <div class="post-thumbnail-list">
+                                @if(!empty($recentPosts->toArray()))
+                                @foreach($recentPosts as $key=>$item)
                                 <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/blog/thumbnail/5.jpg">
+                                    @if($item->image)
+                                        <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
+                                    @else
+                                        <img src="{{asset('assets/images/blog/thumbnail/5.jpg')}}"
+                                             alt="{{$item->name}}">
+                                    @endif
                                     <div class="post-thumbnail-content">
-                                        <a href="#">Suspendisse consectetur fringilla luctus</a>
+                                        <a href="{{route('new-detail',$item->slug)}}">{{$item->title}}</a>
                                         <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
+{{--                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>--}}
                                     </div>
                                 </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/blog/thumbnail/6.jpg">
-                                    <div class="post-thumbnail-content">
-                                        <a href="#">Consectetur adipiscing elit</a>
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> 24h ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
-                                    </div>
-                                </div>
-                                <div class="post-thumbnail-entry">
-                                    <img alt="" src="images/blog/thumbnail/7.jpg">
-                                    <div class="post-thumbnail-content">
-                                        <a href="#">Lorem ipsum dolor sit amet</a>
-                                        <span class="post-date"><i class="fa fa-clock-o"></i> 11h ago</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Lifestyle</span>
-                                    </div>
-                                </div>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                         <!--End: Tabs with Posts-->
 
                         <!-- Twitter widget -->
-                        <div class="widget widget-tweeter" data-username="envato" data-limit="2">
-                            <h4 class="widget-title">Recent Tweets</h4>
-                        </div>
+{{--                        <div class="widget widget-tweeter" data-username="envato" data-limit="2">--}}
+{{--                            <h4 class="widget-title">Recent Tweets</h4>--}}
+{{--                        </div>--}}
                         <!-- end: Twitter widget-->
 
                         <!--widget tags -->
                         <div class="widget  widget-tags">
-                            <h4 class="widget-title">Tags</h4>
+                            <h4 class="widget-title">Danh mục tin tức</h4>
                             <div class="tags">
-                                <a href="#">Design</a>
-                                <a href="#">Portfolio</a>
-                                <a href="#">Digital</a>
-                                <a href="#">Branding</a>
-                                <a href="#">HTML</a>
-                                <a href="#">Clean</a>
-                                <a href="#">Peace</a>
-                                <a href="#">Love</a>
-                                <a href="#">CSS3</a>
-                                <a href="#">jQuery</a>
+                                @if(!empty($postCategories->toArray()))
+                                    @foreach($postCategories as $key=>$item)
+                                <a href="{{route('category-post',$item->slug)}}">{{$item->name}}</a>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                         <!--end: widget tags -->
 
                         <!--widget newsletter-->
-                        <div class="widget  widget-newsletter">
-                            <form class="widget-subscribe-form form-inline" action="include/subscribe-form.php" role="form" method="post">
-                                <h4 class="widget-title">Newsletter</h4>
-                                <small>Stay informed on our latest news!</small>
-                                <div class="input-group">
-                                    <input type="email" aria-required="true" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                                    <span class="input-group-btn">
-                  <button type="submit" id="widget-subscribe-submit-button" class="btn btn-default"><i class="fa fa-paper-plane"></i></button>
-                  </span> </div>
-                            </form>
+{{--                        <div class="widget  widget-newsletter">--}}
+{{--                            <form class="widget-subscribe-form form-inline" action="include/subscribe-form.php" role="form" method="post">--}}
+{{--                                <h4 class="widget-title">Newsletter</h4>--}}
+{{--                                <small>Stay informed on our latest news!</small>--}}
+{{--                                <div class="input-group">--}}
+{{--                                    <input type="email" aria-required="true" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">--}}
+{{--                                    <span class="input-group-btn">--}}
+{{--                  <button type="submit" id="widget-subscribe-submit-button" class="btn btn-default"><i class="fa fa-paper-plane"></i></button>--}}
+{{--                  </span> </div>--}}
+{{--                            </form>--}}
 
-                        </div>
+{{--                        </div>--}}
                         <!--end: widget newsletter-->
                     </div>
                 </div>

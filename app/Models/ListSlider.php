@@ -26,9 +26,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class ListSlider extends Model
+class ListSlider extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'list_sliders';
 
 	protected $casts = [

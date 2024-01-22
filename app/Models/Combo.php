@@ -38,9 +38,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class Combo extends Model
+class Combo extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'combos';
 
 	protected $casts = [

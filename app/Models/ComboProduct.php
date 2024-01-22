@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class ComboProduct
- * 
+ *
  * @property int $combo_id
  * @property int $product_id
  * @property int|null $created_by
@@ -21,15 +21,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Combo $combo
  * @property Product $product
  *
  * @package App\Models
  */
-class ComboProduct extends Model
+class ComboProduct extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'combo_products';
 	public $incrementing = false;
 

@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Post
- * 
+ *
  * @property int $id
  * @property string $title
  * @property string|null $excerpt
@@ -30,14 +30,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string|null $deleted_at
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Category[] $categories
  *
  * @package App\Models
  */
-class Post extends Model
+class Post extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'posts';
 
 	protected $casts = [

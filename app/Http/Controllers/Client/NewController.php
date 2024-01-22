@@ -55,6 +55,22 @@ class NewController extends BaseWebController
     }
 
     public function getDetail($slug){
-        return view('client.post.detail');
+        $post = $this->postRepository->model()
+            ->where('slug',$slug)
+            ->first();
+        $recentPosts = $this->postRepository->model()
+            ->where('status',BaseEnum::Active)
+            ->where('id','!=',$post->id)
+            ->take(4)
+            ->get();
+        $postCategories = $this->categoryRepository->model()
+            ->get();
+
+        return view('client.post.detail')
+            ->with([
+            'post'=>$post,
+            'recentPosts'=>$recentPosts,
+            'postCategories'=>$postCategories,
+        ]);
     }
 }

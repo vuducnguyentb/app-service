@@ -12,18 +12,18 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Category
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $slug
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Post[] $posts
  *
  * @package App\Models
  */
-class Category extends Model
+class Category extends BaseModel
 {
 	protected $table = 'categories';
 

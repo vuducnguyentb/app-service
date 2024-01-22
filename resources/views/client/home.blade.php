@@ -1,4 +1,16 @@
 @extends('client.layouts.main')
+@section('seo_support')
+    <title>{{config('batdangoai')['seo']['home']['title']}}</title>
+    <meta name="description" content="{{config('batdangoai')['seo']['home']['description']}}">
+    <meta property="og:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
+    <meta property="og:title" content="{{config('batdangoai')['seo']['home']['title']}}">
+    <meta property="og:description" content="{{config('batdangoai')['seo']['home']['description']}}">
+    <meta property="og:url" content="{{route('home')}}">
+    <meta name="twitter:title" content="{{config('batdangoai')['seo']['home']['title']}}">
+    <meta name="twitter:description" content="{{config('batdangoai')['seo']['home']['description']}}">
+    <meta name="twitter:card" content="summary_large_image">
+@endsection
 @section('before_css')
 @endsection
 @section('content')
@@ -21,10 +33,10 @@
                                     <!-- Captions -->
                                     <p class="text-medium">{{$item->title}}<br/>{{$item->description}}</p>
                                     <a class="btn btn-light" href="{{$item->link}}">Xem</a>
-{{--                                    <a class="btn btn-light btn-outline"--}}
-{{--                                       href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View--}}
-{{--                                        Collection</a>--}}
-                                    <!-- end: Captions -->
+                                {{--                                    <a class="btn btn-light btn-outline"--}}
+                                {{--                                       href="http://themeforest.net/item/polo-responsive-multipurpose-html5-template/13708923">View--}}
+                                {{--                                        Collection</a>--}}
+                                <!-- end: Captions -->
                                 </div>
                             </div>
                         </div>
@@ -51,7 +63,8 @@
                                             <div class="product-image">
                                                 <a href="{{route('client.combo-detail',$item->slug)}}">
                                                     @if($item->image)
-                                                        <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
+                                                        <img src="{{asset('storage/'.$item->image)}}"
+                                                             alt="{{$item->name}}">
                                                     @else
                                                         <img alt="{{$item->name}}"
                                                              src="{{asset('assets/images/shop/products/1.jpg')}}">
@@ -66,11 +79,14 @@
                                             <div class="product-description">
                                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                                    <h3>
+                                                        <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
+                                                    </h3>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))
-                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
+                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                        </ins>
                                                     @else
                                                         <ins><span class="text-danger">Liên hệ</span></ins>
                                                     @endif
@@ -112,7 +128,7 @@
                             <div class="col-md-3">
                                 <div class="icon-box effect small clean">
                                     <div class="icon">
-                                       <i class="fa fa-plane"></i>
+                                        <i class="fa fa-plane"></i>
                                     </div>
                                     <h3>Miễn phí giao hàng</h3>
                                     <p>Cho đơn hàng từ 999K</p>
@@ -153,54 +169,56 @@
                         <div class="shop">
                             <div class="row">
                                 @foreach($productHomes as $key=>$item)
-                                <div class="col-md-3">
-                                    <div class="product">
-                                        <div class="product-image">
-                                            <a href="{{route('client.product-detail',$item->slug)}}">
-                                                @if($item->image)
-                                                    <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
-                                                @else
-                                                    <img alt="{{$item->name}}"
-                                                         src="{{asset('assets/images/shop/products/1.jpg')}}">
-                                                @endif
-                                            </a>
+                                    <div class="col-md-3">
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <a href="{{route('client.product-detail',$item->slug)}}">
+                                                    @if($item->image)
+                                                        <img src="{{asset('storage/'.$item->image)}}"
+                                                             alt="{{$item->name}}">
+                                                    @else
+                                                        <img alt="{{$item->name}}"
+                                                             src="{{asset('assets/images/shop/products/1.jpg')}}">
+                                                    @endif
+                                                </a>
 
-                                            <span class="product-new">NEW</span>
-                                            <span class="product-wishlist">
+                                                <span class="product-new">NEW</span>
+                                                <span class="product-wishlist">
 <a href="#"><i class="fa fa-heart"></i></a>
 </span>
-{{--                                            <div class="product-overlay">--}}
-{{--                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick--}}
-{{--                                                    View</a>--}}
-{{--                                            </div>--}}
-                                        </div>
+                                                {{--                                            <div class="product-overlay">--}}
+                                                {{--                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick--}}
+                                                {{--                                                    View</a>--}}
+                                                {{--                                            </div>--}}
+                                            </div>
 
-                                        <div class="product-description">
-                                            <div class="product-category">Women</div>
-                                            <div class="product-title">
-                                                <h3>
-                                                    <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
-                                                </h3>
-                                            </div>
-                                            <div class="product-price">
-                                                @if(!empty($item->productPrices->toArray()))
-                                                    <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
-                                                @else
-                                                    <ins class="text-danger">Liên hệ</ins>
-                                                @endif
-                                            </div>
-                                            <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <div class="product-reviews">{{$item->views}} lượt xem
+                                            <div class="product-description">
+                                                <div class="product-category">Women</div>
+                                                <div class="product-title">
+                                                    <h3>
+                                                        <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="product-price">
+                                                    @if(!empty($item->productPrices->toArray()))
+                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                        </ins>
+                                                    @else
+                                                        <ins class="text-danger">Liên hệ</ins>
+                                                    @endif
+                                                </div>
+                                                <div class="product-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                                <div class="product-reviews">{{$item->views}} lượt xem
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
 
                             </div>
@@ -252,38 +270,42 @@
 
                                 <div class="widget-shop">
                                     @foreach($topCombos as $key=>$item)
-                                    <div class="product">
-                                        <div class="product-image">
-                                            <a href="{{route('client.combo-detail',$item->slug)}}">
-                                                @if($item->image)
-                                                    <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
-                                                @else
-                                                    <img alt="{{$item->name}}"
-                                                         src="{{asset('assets/images/shop/products/10.jpg')}}">
-                                                @endif
-                                            </a>
+                                        <div class="product">
+                                            <div class="product-image">
+                                                <a href="{{route('client.combo-detail',$item->slug)}}">
+                                                    @if($item->image)
+                                                        <img src="{{asset('storage/'.$item->image)}}"
+                                                             alt="{{$item->name}}">
+                                                    @else
+                                                        <img alt="{{$item->name}}"
+                                                             src="{{asset('assets/images/shop/products/10.jpg')}}">
+                                                    @endif
+                                                </a>
+                                            </div>
+                                            <div class="product-description">
+                                                <div class="product-category">{{$item->productCategory->name}}</div>
+                                                <div class="product-title">
+                                                    <h3>
+                                                        <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="product-price">
+                                                    @if(!empty($item->productPrices->toArray()))
+                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                        </ins>
+                                                    @else
+                                                        <ins class="text-danger">Liên hệ</ins>
+                                                    @endif
+                                                </div>
+                                                <div class="product-rate">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star-half-o"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="product-description">
-                                            <div class="product-category">{{$item->productCategory->name}}</div>
-                                            <div class="product-title">
-                                                <h3><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></h3>
-                                            </div>
-                                            <div class="product-price">
-                                                @if(!empty($item->productPrices->toArray()))
-                                                    <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
-                                                @else
-                                                    <ins class="text-danger">Liên hệ</ins>
-                                                @endif
-                                            </div>
-                                            <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                        </div>
-                                    </div>
                                     @endforeach
                                 </div>
                             </div>
@@ -298,7 +320,8 @@
                                             <div class="product-image">
                                                 <a href="{{route('client.product-detail',$item->slug)}}">
                                                     @if($item->image)
-                                                        <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
+                                                        <img src="{{asset('storage/'.$item->image)}}"
+                                                             alt="{{$item->name}}">
                                                     @else
                                                         <img alt="{{$item->name}}"
                                                              src="{{asset('assets/images/shop/products/10.jpg')}}">
@@ -308,11 +331,14 @@
                                             <div class="product-description">
                                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                                    <h3>
+                                                        <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
+                                                    </h3>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))
-                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span></ins>
+                                                        <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                        </ins>
                                                     @else
                                                         <ins class="text-danger">Liên hệ</ins>
                                                     @endif

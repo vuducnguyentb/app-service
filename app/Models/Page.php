@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Page
- * 
+ *
  * @property int $id
  * @property string $title
  * @property string|null $excerpt
@@ -31,9 +31,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package App\Models
  */
-class Page extends Model
+class Page extends BaseModel
 {
-	use SoftDeletes;
 	protected $table = 'pages';
 
 	protected $casts = [
