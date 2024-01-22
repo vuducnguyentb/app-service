@@ -3,6 +3,7 @@
 
 <head>
     @yield('seo_support')
+    <link rel="shortcut icon" type="image/png" href="{{asset('assets/images/favicon.png')}}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="BatDaNgoai" />
