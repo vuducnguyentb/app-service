@@ -245,10 +245,16 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
-                                <form class="form-inline text-center">
+                                @if(\Illuminate\Support\Facades\Session::has('success'))
+                                    <div class="alert alert-success">
+                                        {{ \Illuminate\Support\Facades\Session::get('success') }}
+                                    </div>
+                                @endif
+                                    <form class="form-inline text-center" method="POST" enctype="multipart/form-data" action="{{route('sign-mail')}}">
+                                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                     <div class="form-group">
                                         <label class="sr-only">Email</label>
-                                        <input type="text" class="form-control" placeholder="Nhập email.">
+                                        <input type="email" class="form-control" placeholder="Nhập email." name="emailSign">
                                     </div>
                                     <button class="btn btn-default" type="submit">Đăng ký ngay</button>
                                 </form>

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Admin\DashBoardController;
-use App\Http\Controllers\Admin\CategoryWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,24 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-//Route::get('/tinymce', function () {
-//    return view('tinymce');
-//});
 #Trang chủ
 Route::get('/','Client\HomeController@index')->name('home');
 
-#ds mục tin tức
-Route::get('/tin-tuc','Client\NewController@index')->name('news');
-#thể loại tin tức
+#ds mục tin tức - thể loại- chi tiết
+Route::get('/tin-tuc','Client\NewController@index')
+    ->name('news');
 Route::get('/tin/{slug}','Client\NewController@getCategory')
     ->name('category-post');
-#tin tức chi tiết
 Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')
     ->name('new-detail');
+
 #sản phẩm
 Route::get('/danh-sach-san-pham','Client\ProductClientController@index')
     ->name('client.product');
@@ -41,6 +34,7 @@ Route::get('/danh-muc-san-pham/{slug}','Client\ProductClientController@getCatego
 Route::get('/san-pham/{slug}','Client\ProductClientController@getDetail')
     ->name('client.product-detail')
     ->middleware('check.product.view');
+
 #combo
 Route::get('/combo-thue-bat','Client\ComboClientController@index')
     ->name('client.combo');
@@ -51,14 +45,20 @@ Route::get('/combo/{slug}','Client\ComboClientController@getDetail')
     ->middleware('check.combo.view');
 
 #Trang đăng nhập
-Route::get('/sign-in','LoginController@login')->name('login');
-Route::post('/login','LoginController@checkLogin')->name('check-login');
-Route::get('/logout','LoginController@logout')->name('logout');
+Route::get('/sign-in','LoginController@login')
+    ->name('login');
+Route::post('/login','LoginController@checkLogin')
+    ->name('check-login');
+Route::get('/logout','LoginController@logout')
+    ->name('logout');
 
 #Trang page
 Route::get('/p/{slug}','Client\PageClientController@getDetail')
 ->name('client.page');
 
+#đăng ký email
+Route::post('/sign-email','Client\ContactEmailController@checkMail')
+    ->name('sign-mail');
 
 #Các route trang quản trị
 Route::prefix('admin')
