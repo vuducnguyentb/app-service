@@ -4,7 +4,7 @@
             <!--Logo-->
             <div id="logo">
                 <a href="/" class="logo" data-dark-logo="images/logo-dark.png">
-                    <img src="{{asset('assets/images/logo.png')}}" alt="Polo Logo">
+                    <img src="{{asset('assets/images/logo.jpg')}}" alt="Polo Logo">
                 </a>
             </div>
             <!--End: Logo-->

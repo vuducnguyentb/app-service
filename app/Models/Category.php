@@ -25,16 +25,19 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends BaseModel
 {
-	protected $table = 'categories';
+    protected $table = 'categories';
 
-	protected $fillable = [
-		'name',
-		'slug'
-	];
+    protected $fillable = [
+        'name',
+        'slug',
+        'created_by',
+        'updated_by',
+        'deleted_by'
+    ];
 
-	public function posts()
-	{
-		return $this->belongsToMany(Post::class, 'category_posts')
-					->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at');
-	}
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'category_posts');
+//            ->withPivot('created_by', 'updated_by', 'deleted_by', 'deleted_at');
+    }
 }
