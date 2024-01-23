@@ -82,10 +82,10 @@ class PageController extends BaseWebController
 
     public function edit($id)
     {
-        $post = Page::find($id);
+        $page = Page::find($id);
         return view('admin.page.edit')->with(
             [
-                'post' => $post,
+                'page' => $page,
             ]
         );
     }
@@ -101,26 +101,25 @@ class PageController extends BaseWebController
         }else{
             $image = null;
         }
-        $post = Page::find($id);
+        $page = Page::find($id);
         if($image){
-            $post->update([
+            $page->update([
                 'title' => $data['title'],
                 'slug' => $data['slug'],
                 'status' => $data['status'],
                 'expert' => $data['expert'],
-                'content' => $data['content'],
                 'meta_description' => $data['description'],
                 'meta_keywords' => $data['keywords'],
                 'image' => $image,
                 'body' => $data['content'],
             ]);
         }else{
-            $post->update([
+            $page->update([
                 'title' => $data['title'],
                 'slug' => $data['slug'],
                 'status' => $data['status'],
                 'expert' => $data['expert'],
-                'content' => $data['content'],
+                'body' => $data['content'],
                 'meta_description' => $data['description'],
                 'meta_keywords' => $data['keywords'],
             ]);
