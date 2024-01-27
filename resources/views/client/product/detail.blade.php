@@ -204,7 +204,7 @@
                             <div class="product-description">
                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                 <div class="product-title">
-                                    <h3><a href="#">{{$item->name}}</a></h3>
+                                    <p><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
                                 </div>
                                 <div class="product-price">
                                     @if(!empty($item->productPrices->toArray()))
@@ -233,7 +233,7 @@
 
                             <div class="product">
                                 <div class="product-image">
-                                    <a href="#">
+                                    <a href="{{route('client.combo-detail',$item->slug)}}">
                                         @if($item->image)
                                             <img src="{{asset('storage/'.$item->image)}}" alt="{{$item->name}}">
                                         @else
@@ -245,7 +245,7 @@
                                 <div class="product-description">
                                     <div class="product-category">{{$item->productCategory->name}}</div>
                                     <div class="product-title">
-                                        <h3><a href="#">{{$item->name}}</a></h3>
+                                        <p><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></p>
                                     </div>
                                     <div class="product-price">
                                         @if(!empty($item->productPrices->toArray()))

@@ -71,17 +71,17 @@
                                                     @endif
                                                 </a>
                                                 <span class="product-new">HOT</span>
-                                                <span class="product-wishlist">
-<a href="#"><i class="fa fa-heart"></i></a>
-</span>
+{{--                                                <span class="product-wishlist">--}}
+{{--<a href="#"><i class="fa fa-heart"></i></a>--}}
+{{--</span>--}}
                                             </div>
 
                                             <div class="product-description">
                                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3>
+                                                    <p>
                                                         <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
-                                                    </h3>
+                                                    </p>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))
@@ -119,10 +119,10 @@
                                     <div class="icon">
                                         <i class="fa fa-phone-square"></i>
                                     </div>
-                                    <h3>Tư vấn 24/7</h3>
+                                    <p>Tư vấn 24/7</p>
                                     <p>
                                         Hỗ trợ tư vấn nhiệt tình
-                                        0386.267.017</p>
+                                        0904.779.796</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -130,7 +130,7 @@
                                     <div class="icon">
                                         <i class="fa fa-plane"></i>
                                     </div>
-                                    <h3>Miễn phí giao hàng</h3>
+                                    <p>Miễn phí giao hàng</p>
                                     <p>Cho đơn hàng từ 999K</p>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                     <div class="icon">
                                         <i class="fa fa-heart"></i>
                                     </div>
-                                    <h3>Sản phẩm</h3>
+                                    <p>Sản phẩm</p>
                                     <p>Sản phẩm chất lượng, liên tục cập nhật.</p>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                     <div class="icon">
                                         <i class="fa fa-history"></i>
                                     </div>
-                                    <h3>Thủ tục thuê</h3>
+                                    <p>Thủ tục thuê</p>
                                     <p>Nhanh gọn - Dễ dàng</p>
                                 </div>
                             </div>
@@ -182,10 +182,10 @@
                                                     @endif
                                                 </a>
 
-                                                <span class="product-new">NEW</span>
-                                                <span class="product-wishlist">
-<a href="#"><i class="fa fa-heart"></i></a>
-</span>
+{{--                                                <span class="product-new">NEW</span>--}}
+{{--                                                <span class="product-wishlist">--}}
+{{--<a href="#"><i class="fa fa-heart"></i></a>--}}
+{{--</span>--}}
                                                 {{--                                            <div class="product-overlay">--}}
                                                 {{--                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick--}}
                                                 {{--                                                    View</a>--}}
@@ -193,11 +193,11 @@
                                             </div>
 
                                             <div class="product-description">
-                                                <div class="product-category">Women</div>
+                                                <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3>
+                                                    <p>
                                                         <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
-                                                    </h3>
+                                                    </p>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))
@@ -291,9 +291,9 @@
                                             <div class="product-description">
                                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3>
+                                                    <p>
                                                         <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
-                                                    </h3>
+                                                    </p>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))
@@ -337,9 +337,9 @@
                                             <div class="product-description">
                                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                                 <div class="product-title">
-                                                    <h3>
+                                                    <p>
                                                         <a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a>
-                                                    </h3>
+                                                    </p>
                                                 </div>
                                                 <div class="product-price">
                                                     @if(!empty($item->productPrices->toArray()))

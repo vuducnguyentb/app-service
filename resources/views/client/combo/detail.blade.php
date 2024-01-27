@@ -4,7 +4,7 @@
     <meta name="description" content="{{$combo->meta_description}}">
     <meta property="og:title" content="{{$combo->title}}">
     <meta property="og:description" content="{{$combo->meta_description}}">
-    <meta property="og:url" content="{{route('client.combo-detail',$page->slug)}}">
+    <meta property="og:url" content="{{route('client.combo-detail',$combo->slug)}}">
     <meta name="twitter:title" content=" {{$combo->name}}">
     <meta name="twitter:description" content="{{$combo->meta_description}}">
     @if($combo->image)
@@ -120,13 +120,23 @@
                 <div id="tabs-1" class="tabs simple">
                     <ul class="tabs-navigation">
                         <li class="active"><a href="#tab1"><i class="fa fa-align-justify"></i>Chi tiết</a> </li>
-{{--                        <li><a href="#tab2"><i class="fa fa-info"></i>Additional Info</a> </li>--}}
+{{--                        <li><a href="#tab2"><i class="fa fa-info"></i>Thông tin các sản phẩm</a> </li>--}}
 {{--                        <li><a href="#tab3"><i class="fa fa-star"></i>Reviews <span>(3)</span></a> </li>--}}
                     </ul>
                     <div class="tabs-content">
                         <div class="tab-pane active" id="tab1">
                             <p>{!! $combo ->body !!}</p>
                         </div>
+{{--                        <div class="tab-pane" id="tab2">--}}
+{{--                            @foreach($combo->products as $key=>$item)--}}
+{{--                            <p>{{$item->name}}</p>--}}
+{{--                                @if($combo->image)--}}
+{{--                                    <img src="{{asset('storage/'.$item->image)}}" alt="" style="width: 200px; height: auto">--}}
+{{--                                @else--}}
+{{--                                    <img src="{{asset('assets/images/shop/products/product-large.jpg')}}" alt="" style="width: 200px; height: auto">--}}
+{{--                                @endif--}}
+{{--                            @endforeach--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -160,7 +170,7 @@
                                 <div class="product-description">
                                     <div class="product-category">{{$item->productCategory->name}}</div>
                                     <div class="product-title">
-                                        <h3><a href="#">{{$item->name}}</a></h3>
+                                        <p><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></p>
                                     </div>
                                     <div class="product-price">
                                         @if(!empty($item->productPrices->toArray()))
@@ -200,7 +210,7 @@
                                 <div class="product-description">
                                     <div class="product-category">{{$item->productCategory->name}}</div>
                                     <div class="product-title">
-                                        <h3><a href="#">{{$item->name}}</a></h3>
+                                        <p><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
                                     </div>
                                     <div class="product-price">
                                         @if(!empty($item->productPrices->toArray()))

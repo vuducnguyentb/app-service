@@ -11,7 +11,8 @@
 
             <!--Top Search Form-->
             <div id="top-search">
-                <form action="search-results-page.html" method="get">
+                <form action="{{route('client.search-product')}}" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                     <input type="text" name="searchWord" class="form-control" value="" placeholder="Tìm kiếm sản phẩm.">
                 </form>
             </div>
@@ -74,7 +75,7 @@
                                 @if(!empty($comboCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($comboCategories as $key=>$item)
-                                    <li ><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
+                                    <li ><a href="{{route('client.category-combo',$item->slug)}}"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>
@@ -84,7 +85,7 @@
                                 @if(!empty($productCategories))
                                 <ul class="dropdown-menu">
                                     @foreach($productCategories as $key=>$item)
-                                    <li ><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
+                                    <li ><a href="{{route('client.category-product',$item->slug)}}"><i class="fa fa-star"></i>{{$item->name}}</a>
                                     </li>
                                     @endforeach
                                 </ul>

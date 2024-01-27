@@ -109,7 +109,7 @@
                                     <div class="product-description">
                                         <div class="product-category">{{$item->productCategory->name}}</div>
                                         <div class="product-title">
-                                            <h3><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                            <p><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
                                         </div>
                                         <div class="product-price">
                                             @if(!empty($item->productPrices->toArray()))
@@ -172,7 +172,7 @@
                             <div class="product-description">
                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                 <div class="product-title">
-                                    <h3><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                    <p><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
                                 </div>
                                 <div class="product-price">
                                     @if(!empty($item->productPrices->toArray()))
@@ -229,26 +229,6 @@
     </section>
     <!-- end: Shop products -->
 
-
-    <!-- DELIVERY INFO -->
-    <section class="background-grey p-t-40 p-b-0">
-        <div class="container">
-            <div class="row">
-                @for($i=0;$i<3;$i++)
-                <div class="col-md-4">
-                    <div class="icon-box effect small clean">
-                        <div class="icon">
-                            <a href="#"><i class="fa fa-gift"></i></a>
-                        </div>
-                        <h3>Free shipping on orders $60+</h3>
-                        <p>Order more than 60$ and you will get free shippining Worldwide. More info.</p>
-                    </div>
-                </div>
-                @endfor
-            </div>
-        </div>
-    </section>
-    <!-- end: DELIVERY INFO -->
 
 
 @endsection

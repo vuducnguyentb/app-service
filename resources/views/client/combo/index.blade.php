@@ -109,7 +109,7 @@
                                     <div class="product-description">
                                         <div class="product-category">{{$item->productCategory->name}}</div>
                                         <div class="product-title">
-                                            <h3><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                            <p><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></p>
                                         </div>
                                         <div class="product-price">
                                             @if(!empty($item->productPrices->toArray()))
@@ -146,11 +146,11 @@
                 <div class="sidebar col-md-3">
                     <!--widget newsletter-->
                     <div class="widget clearfix widget-archive">
-                        <h4 class="widget-title">Danh mục sản phẩm</h4>
+                        <h4 class="widget-title">Danh mục combo</h4>
                         @if(!empty($categories->toArray()))
                         <ul class="list list-lines">
                             @foreach($categories as $key=>$item)
-                            <li><a href="{{route('client.category-combo',$item->slug)}}">{{$item->name}}</a> <span class="count">({{$item->products_count}})</span>
+                            <li><a href="{{route('client.category-combo',$item->slug)}}">{{$item->name}}</a> <span class="count">({{$item->combos_count}})</span>
                             </li>
                             @endforeach
                         </ul>
@@ -173,7 +173,7 @@
                             <div class="product-description">
                                 <div class="product-category">{{$item->productCategory->name}}</div>
                                 <div class="product-title">
-                                    <h3><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></h3>
+                                    <p><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
                                 </div>
                                 <div class="product-price">
                                     @if(!empty($item->productPrices->toArray()))

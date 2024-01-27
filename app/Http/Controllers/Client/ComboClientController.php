@@ -31,7 +31,7 @@ class ComboClientController extends BaseWebController
     public function index(Request $request)
     {
         $categories = $this->categoryRepository->model()
-            ->withCount('products')
+            ->withCount('combos')
             ->where('status', BaseEnum::Active)
             ->where('type', BaseEnum::TypeCombo)
             ->get();
@@ -55,7 +55,7 @@ class ComboClientController extends BaseWebController
     public function getCategory($slug)
     {
         $categories = $this->categoryRepository->model()
-            ->withCount('products')
+            ->withCount('combos')
             ->where('status', BaseEnum::Active)
             ->where('type', BaseEnum::TypeCombo)
             ->get();
@@ -94,6 +94,7 @@ class ComboClientController extends BaseWebController
             ->take(3)
             ->get();
         \event(new ComboViews($combo));
+//        dd($combo->products);
         return view('client.combo.detail')->with(
             [
                 'combo'=>$combo,

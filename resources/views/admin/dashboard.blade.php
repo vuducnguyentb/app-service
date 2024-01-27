@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Trang DashBoard</h1>
+                        <h1 class="m-0">Trang Quản Trị</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v2</li>
+                            <li class="breadcrumb-item"><a href="{{route('dasdhboard')}}">Trang chủ</a></li>
+                            <li class="breadcrumb-item active">Quản trị</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -30,10 +30,10 @@
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">CPU Traffic</span>
+                                <span class="info-box-text">Combo</span>
                                 <span class="info-box-number">
-                  10
-                  <small>%</small>
+                  {{$countCombo}}
+                  <small> đang có</small>
                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -46,8 +46,10 @@
                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Likes</span>
-                                <span class="info-box-number">41,410</span>
+                                <span class="info-box-text">Sản phẩm</span>
+                                <span class="info-box-number">{{$countProduct}}
+                                                                <small> đang có</small>
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>

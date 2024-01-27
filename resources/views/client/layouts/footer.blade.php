@@ -38,9 +38,9 @@
                     <div class="widget">
                         <h4>THÔNG TIN CHÍNH SÁCH</h4>
                         <ul class="list-icon list-icon-arrow">
-                            <li><a href="/gioi-thieu">Giới thiệu</a></li>
-                            <li><a href="/quy-dinh">Quy định hình thức thanh toán</a></li>
-                            <li><a href="/chinh-sach">Chính sách vận chuyển,giao nhận</a></li>
+                            <li><a href="/p/gioi-thieu">Giới thiệu</a></li>
+                            <li><a href="/p/quy-dinh">Quy định hình thức thanh toán</a></li>
+                            <li><a href="/p/chinh-sach">Chính sách vận chuyển,giao nhận</a></li>
                             <li><a href="/">Trang chủ</a></li>
                             <li><a href="{{route('news')}}">Tin tức</a></li>
                         </ul>

@@ -6,7 +6,7 @@
     <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
     <meta property="og:title" content="{{config('batdangoai')['seo']['category-combo']['title']}}">
     <meta property="og:description" content="{{config('batdangoai')['seo']['category-combo']['description']}}">
-    <meta property="og:url" content="{{route('client.combo')}}">
+    <meta property="og:url" content="{{route('client.category-combo',$categoryProduct->slug)}}">
     <meta name="twitter:title" content="{{config('batdangoai')['seo']['category-combo']['title']}}">
     <meta name="twitter:description" content="{{config('batdangoai')['seo']['category-combo']['description']}}">
     <meta name="twitter:card" content="summary_large_image">
@@ -61,9 +61,9 @@
                                         <div class="product-description">
                                             <div class="product-category">{{$item->productCategory->name}}</div>
                                             <div class="product-title">
-                                                <h3>
+                                                <p>
                                                     <a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
-                                                </h3>
+                                                </p>
                                             </div>
                                             <div class="product-price">
                                                 @if(!empty($item->productPrices->toArray()))
@@ -127,7 +127,7 @@
                                         <a href="{{route('client.category-combo',$item->slug)}}">
                                             {{$item->name}}
                                         </a>
-                                        <span class="count">({{$item->products_count}})</span>
+                                        <span class="count">({{$item->combos_count}})</span>
                                     </li>
                                     @endforeach
                         </ul>
@@ -149,8 +149,8 @@
                                 <div class="product-description">
                                     <div class="product-category">{{$item->productCategory->name}}</div>
                                     <div class="product-title">
-                                        <h3><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
-                                        </h3>
+                                        <p><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a>
+                                        </p>
                                     </div>
                                     <div class="product-price">
                                         @if(!empty($item->productPrices->toArray()))

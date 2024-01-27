@@ -60,13 +60,18 @@ Route::get('/p/{slug}','Client\PageClientController@getDetail')
 Route::post('/sign-email','Client\ContactEmailController@checkMail')
     ->name('sign-mail');
 
+#Tim kiếm sản phẩm
+Route::post('/seach-product','Client\SearchProductController@searchProduct')
+    ->name('client.search-product');
+
 #Các route trang quản trị
 Route::prefix('admin')
     ->middleware([
         'auth:sanctum'
     ])
     ->group(function(){
-    Route::get('/dashboard',[DashBoardController::class,'index'])->name('dasdhboard');
+    Route::get('/dashboard',[DashBoardController::class,'index'])
+        ->name('dasdhboard');
 
     #danh mục sản phẩm - combo
     Route::resource('/product-categories','Admin\ProductCategoryController');
