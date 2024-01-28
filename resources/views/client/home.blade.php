@@ -15,11 +15,12 @@
 @endsection
 @section('content')
 
+    @if(!empty($sliders->toArray()))
     <!-- Inspiro Slider -->
     <div id="slider" class="inspiro-slider arrows-large arrows-creative dots-creative" data-height-xs="360"
          data-autoplay-timeout="2600" data-animate-in="fadeIn" data-animate-out="fadeOut" data-items="1"
          data-loop="true" data-autoplay="true">
-    @foreach($sliders as $key=>$item)
+            @foreach($sliders as $key=>$item)
         <!-- Slide 1 -->
             @if($item->image)
                 <div class="slide"
@@ -44,7 +45,7 @@
                     <!-- end: Slide 1 -->
                 </div>
                 <!--end: Inspiro Slider -->
-
+        @endif
                 <!-- end: Sản phẩm Hot -->
                 <section>
                     <div class="container">
@@ -57,6 +58,7 @@
 
                         <div class="shop-category">
                             <div class="row">
+                                @if(!empty($comboHots->toArray()))
                                 @foreach($comboHots as $key=>$item)
                                     <div class="col-md-3">
                                         <div class="product">
@@ -104,6 +106,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -168,6 +171,7 @@
                         <!--Product list-->
                         <div class="shop">
                             <div class="row">
+                                @if(!empty($productHomes->toArray()))
                                 @foreach($productHomes as $key=>$item)
                                     <div class="col-md-3">
                                         <div class="product">
@@ -220,6 +224,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                @endif
 
                             </div>
                         </div>
@@ -275,6 +280,7 @@
                                 </div>
 
                                 <div class="widget-shop">
+                                    @if(!empty($topCombos->toArray()))
                                     @foreach($topCombos as $key=>$item)
                                         <div class="product">
                                             <div class="product-image">
@@ -313,6 +319,7 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -321,6 +328,7 @@
                                 </div>
 
                                 <div class="widget-shop">
+                                    @if(!empty($topProducts->toArray()))
                                     @foreach($topProducts as $key=>$item)
                                         <div class="product">
                                             <div class="product-image">
@@ -359,6 +367,7 @@
                                             </div>
                                         </div>
                                     @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -376,6 +385,7 @@
                         <div id="blog">
                             <!-- Blog post-->
                             <div id="blog" class="grid-layout post-4-columns m-b-30" data-item="post-item">
+                           @if(!empty($postHomes->toArray()))
                             @foreach($postHomes as $key=>$item)
                                 <!-- Post item-->
                                     <div class="post-item border">
@@ -405,6 +415,7 @@
                                     </div>
                                     <!-- end: Post item-->
                                 @endforeach
+                               @endif
                             </div>
                             <!-- end: Blog post-->
                         </div>

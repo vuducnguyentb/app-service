@@ -34,6 +34,7 @@
                 <div class="content col-md-9">
                     <!--Product list-->
                     <div class="shop">
+                        @if(!empty($combos->toArray()))
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($combos as $key=>$item)
                                 <div class="grid-item">
@@ -90,6 +91,7 @@
                         <div>
                             {{ $combos->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                         </div>
+                    @endif
                         <!-- Pagination -->
                     {{--                        <div class="pagination">--}}
                     {{--                            <ul>--}}
@@ -134,6 +136,7 @@
                     </div>
                     <div class="widget clearfix widget-shop">
                         <h4 class="widget-title">Combo mới</h4>
+                        @if(!empty($latestCombos->toArray()))
                         @foreach($latestCombos as $key=>$item)
                             <div class="product">
                                 <div class="product-image">
@@ -169,6 +172,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        @endif
                     </div>
 {{--                    <div class="widget clearfix widget-tags">--}}
 {{--                        <h4 class="widget-title">Tags</h4>--}}

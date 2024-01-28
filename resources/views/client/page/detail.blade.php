@@ -51,6 +51,7 @@
                     <div class="widget ">
                         <h4 class="widget-title">Bài viết mới</h4>
                         <div class="post-thumbnail-list">
+                            @if(!empty($posts->toArray()))
                             @foreach($posts as $key=>$item)
                             <div class="post-thumbnail-entry">
                                 @if($item->image)
@@ -66,6 +67,7 @@
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                     <!--End: Tabs with Posts-->

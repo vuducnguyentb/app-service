@@ -34,6 +34,7 @@
                     </div>
                     <!-- end: Page title -->
 
+                    @if(!empty($postInCategories->toArray()))
                     <!-- Blog -->
                     <div id="blog" class="post-thumbnails">
                         @foreach($postInCategories as $key=>$post)
@@ -75,7 +76,7 @@
                         {{ $postInCategories->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                     </div>
                     <!-- end: Pagination -->
-
+                        @endif
                 </div>
                 <!-- end: post content -->
 

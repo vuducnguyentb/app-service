@@ -73,6 +73,7 @@
 {{--                    </div>--}}
                     <!--Product list-->
                     <div class="shop">
+                        @if(!empty($products->toArray()))
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($products as $key=>$item)
                                 <div class="grid-item">
@@ -129,6 +130,7 @@
                         <div>
                             {{ $products->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                         </div>
+                        @endif
                         <!-- Pagination -->
                     {{--                        <div class="pagination">--}}
                     {{--                            <ul>--}}
@@ -156,6 +158,7 @@
                     <!--widget newsletter-->
                     <div class="widget clearfix widget-archive">
                         <h4 class="widget-title">Danh mục sản phẩm</h4>
+                        @if(!empty($categories->toArray()))
                         <ul class="list list-lines">
                             @foreach($categories as $key=>$item)
                                 @if($item->id == $categoryProduct->id)
@@ -170,6 +173,7 @@
                                     </li>
                                     @endforeach
                         </ul>
+                        @endif
                     </div>
                     <div class="widget clearfix widget-shop">
                         <h4 class="widget-title">Sản phẩm mới nhất</h4>

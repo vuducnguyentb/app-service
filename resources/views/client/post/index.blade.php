@@ -34,6 +34,7 @@
                     </div>
                     <!-- end: Page title -->
 
+                    @if(!empty($posts->toArray()))
                     <!-- Blog -->
                     <div id="blog" class="post-thumbnails">
                         @foreach($posts as $key=>$post)
@@ -75,7 +76,7 @@
                         {{ $posts->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                     </div>
                     <!-- end: Pagination -->
-
+                        @endif
                 </div>
                 <!-- end: post content -->
 
@@ -86,6 +87,7 @@
                         <div class="widget ">
                             <h4 class="widget-title">Bài viết mới</h4>
                             <div class="post-thumbnail-list">
+                                @if(!empty($randomPosts->toArray()))
                                 @foreach($randomPosts as $key=>$item)
                                 <div class="post-thumbnail-entry">
                                     @if($item->image)
@@ -100,6 +102,7 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                @endif
                             </div>
                         </div>
                         <!--End: Tabs with Posts-->

@@ -155,6 +155,7 @@
 
 
                     <div class="widget-shop">
+                        @if(!empty($relatedCombos->toArray()))
                         @foreach($relatedCombos as $key=>$item)
                             <div class="product">
                                 <div class="product-image">
@@ -189,12 +190,14 @@
                                 </div>
                             </div>
                         @endforeach
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-6">
 
 
                     <div class="widget-shop">
+                        @if(!empty($products->toArray()))
                         @foreach($products as $key=>$item)
                             <div class="product">
                                 <div class="product-image">
@@ -229,6 +232,7 @@
                                 </div>
                             </div>
                         @endforeach
+                        @endif
                     </div>
                 </div>
 

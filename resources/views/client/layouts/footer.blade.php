@@ -52,6 +52,7 @@
                     <div class="widget">
                         <h4>Tin tức mới nhât.</h4>
                         <div class="post-thumbnail-list">
+                            @if(!empty($postNewFooters))
                             @foreach($postNewFooters as $key=>$item)
                             <div class="post-thumbnail-entry">
                                 <div class="post-thumbnail-content">
@@ -63,6 +64,7 @@
                                 </div>
                             </div>
                             @endforeach
+                            @endif
                         </div>
                     </div>
                     <!-- end: Footer widget area 3 -->

@@ -72,7 +72,7 @@
 {{--                                </ul>--}}
                             </li>
                             <li class="dropdown"> <a href="{{route('client.combo')}}">Gói combo</a>
-                                @if(!empty($comboCategories))
+                                @if(!empty($comboCategories->toArray()))
                                 <ul class="dropdown-menu">
                                     @foreach($comboCategories as $key=>$item)
                                     <li ><a href="{{route('client.category-combo',$item->slug)}}"><i class="fa fa-star"></i>{{$item->name}}</a>
@@ -82,7 +82,7 @@
                                 @endif
                             </li>
                             <li class="dropdown"> <a href="{{route('client.product')}}">Sản phẩm</a>
-                                @if(!empty($productCategories))
+                                @if(!empty($productCategories->toArray()))
                                 <ul class="dropdown-menu">
                                     @foreach($productCategories as $key=>$item)
                                     <li ><a href="{{route('client.category-product',$item->slug)}}"><i class="fa fa-star"></i>{{$item->name}}</a>
@@ -98,7 +98,7 @@
 {{--                                </ul>--}}
                             </li>
                             <li class="dropdown"> <a href="{{route('news')}}">Tin tức</a>
-                                @if(!empty($headerPostCategories))
+                                @if(!empty($headerPostCategories->toArray()))
                                     <ul class="dropdown-menu">
                                         @foreach($headerPostCategories as $key=>$item)
                                             <li ><a href="{{route('category-post',$item->slug)}}"><i class="fa fa-newspaper-o"></i>{{$item->name}}</a>

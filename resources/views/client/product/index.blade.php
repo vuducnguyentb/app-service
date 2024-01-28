@@ -83,6 +83,7 @@
                     <!--Product list-->
 {{--                    @if(!empty($products->toArray()))--}}
                     <div class="shop">
+                        @if(!empty($products->toArray()))
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($products as $key=>$item)
                             <div class="grid-item">
@@ -136,6 +137,7 @@
                         <div>
                             {{ $products->links('vendor.pagination.bootstrap-4', ['foo' => 'bar']) }}
                         </div>
+                        @endif
                     </div>
 {{--                    @endif--}}
                     <!--End: Product list-->
@@ -158,6 +160,7 @@
                     </div>
                     <div class="widget clearfix widget-shop">
                         <h4 class="widget-title">Sản phẩm mới</h4>
+                        @if(!empty($latestProducts->toArray()))
                         @foreach($latestProducts as $key=>$item)
                         <div class="product">
                             <div class="product-image">
@@ -191,6 +194,7 @@
                             </div>
                         </div>
                         @endforeach
+                        @endif
                     </div>
 {{--                    <div class="widget clearfix widget-tags">--}}
 {{--                        <h4 class="widget-title">Tags</h4>--}}
