@@ -9,7 +9,7 @@
                         <ul class="list-icon">
                             <li><i class="fa fa-map-marker"></i>237 Ngõ 141 Giáp Nhị - Thịnh Liệt - Hoàng Mai
                                 <br>(Cạnh đầu sông Sét)</li>
-                            <li><i class="fa fa-phone"></i> 0904.779.796 - 0967.277.142</li>
+                            <li><i class="fa fa-phone"></i> 0966.681.891 - 0967.277.142</li>
                             <li><i class="fa fa-envelope"></i> <a href="mailto:first.last@example.com">batdangoai@gmail.com</a>
                             </li>
                             <li>

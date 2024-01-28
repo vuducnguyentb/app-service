@@ -17,6 +17,16 @@
     <meta name="twitter:card" content="summary_large_image">
 @endsection
 @section('before_css')
+    <style>
+        .post-content{
+            width:100%;
+            overflow: auto;
+        }
+        .post-content img{
+            width: 100% !important;
+            height: auto;
+        }
+    </style>
 @endsection
 @section('content')
 
@@ -38,36 +48,10 @@
                                 </div>
                                 <div class="post-item-description">
                                     <h2>{{$post->title}}</h2>
-                                    <div class="post-meta">
+                                    <div class="post-content">
+                                        {!! $post->body !!}
 
-                                        <span class="post-meta-date"><i class="fa fa-calendar-o"></i>{{Carbon\Carbon::create($post->created_at)->format('d-m-Y')}}</span>
-                                        <span class="post-meta-comments"><a href=""><i class="fa fa-comments-o"></i>33 Comments</a></span>
-                                        <span class="post-meta-category"><a href=""><i class="fa fa-tag"></i>Lifestyle, Magazine</a></span>
-                                        <div class="post-meta-share">
-                                            <a class="btn btn-xs btn-slide btn-facebook" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                                <span>Facebook</span>
-                                            </a>
-                                        </div>
                                     </div>
-                                    <p>Curabitur pulvinar euismod ante, ac sagittis ante posuere ac. Vivamus luctus commodo dolor porta feugiat. Fusce at velit id ligula pharetra laoreet. Ut nec metus a mi ullamcorper hendrerit. Nulla facilisi. Pellentesque sed nibh a quam accumsan dignissim quis quis urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dolor dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus.M</p>
-                                    <blockquote>
-                                        <p>The world is a dangerous place to live; not because of the people who are evil, but because of the people who don't do anything about it.</p>
-                                        <small>by <cite>Albert Einstein</cite></small>
-                                    </blockquote>
-                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dolor dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus. Suspendisse vel lacus est, sit amet tincidunt erat. Etiam purus sem, euismod eu vulputate eget, porta quis sapien. Donec tellus est, rhoncus vel scelerisque id, iaculis eu nibh.</p>
-
-
-                                    <p>Donec posuere bibendum metus. Quisque gravida luctus volutpat. Mauris interdum, lectus in dapibus molestie, quam felis sollicitudin mauris, sit amet tempus velit lectus nec lorem. Nullam vel mollis neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel enim dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed tincidunt accumsan massa id viverra. Sed sagittis, nisl sit amet imperdiet convallis, nunc tortor consequat tellus, vel molestie neque nulla non ligula. Proin tincidunt tellus ac porta volutpat. Cras mattis congue lacus id bibendum. Mauris ut sodales libero. Maecenas feugiat sit amet enim in accumsan.</p>
-
-                                    <p>Duis vestibulum quis quam vel accumsan. Nunc a vulputate lectus. Vestibulum eleifend nisl sed massa sagittis vestibulum. Vestibulum pretium blandit tellus, sodales volutpat sapien varius vel. Phasellus tristique cursus erat, a placerat tellus laoreet eget. Fusce vitae dui sit amet lacus rutrum convallis. Vivamus sit amet lectus venenatis est rhoncus interdum a vitae velit.</p>
-
-                                </div>
-                                <div class="post-tags">
-                                    <a href="#">Life</a>
-                                    <a href="#">Sport</a>
-                                    <a href="#">Tech</a>
-                                    <a href="#">Travel</a>
                                 </div>
                             </div>
                         </div>

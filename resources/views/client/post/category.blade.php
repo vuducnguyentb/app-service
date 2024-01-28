@@ -6,7 +6,7 @@
     <meta name="twitter:image" content="{{asset('assets/seo/title/batdangoai.jpg')}}">
     <meta property="og:title" content="{{config('batdangoai')['seo']['category-post']['title']}}">
     <meta property="og:description" content="{{config('batdangoai')['seo']['category-post']['description']}}">
-    <meta property="og:url" content="{{route('category-post')}}">
+    <meta property="og:url" content="{{route('category-post',$categoryPost->slug)}}">
     <meta name="twitter:title" content="{{config('batdangoai')['seo']['category-post']['title']}}">
     <meta name="twitter:description" content="{{config('batdangoai')['seo']['category-post']['description']}}">
     <meta name="twitter:card" content="summary_large_image">
