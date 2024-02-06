@@ -14,7 +14,7 @@
     =======================*/
 
 
-    .page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+    .page_404{ padding:40px 0; background:#fff;
     }
 
     .page_404  img{ width:100%;}

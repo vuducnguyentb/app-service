@@ -20,7 +20,7 @@ Route::get('/','Client\HomeController@index')->name('home');
 
 #ds mục tin tức - thể loại- chi tiết
 Route::get('/tin-tuc','Client\NewController@index')
-    ->name('client.news');
+    ->name('news');
 Route::get('/tin/{slug}','Client\NewController@getCategory')
     ->name('category-post');
 Route::get('/tin-tuc/{slug}','Client\NewController@getDetail')

@@ -8,7 +8,7 @@
                 </button>
 
                 <a href="https://www.portotheme.com/html/molla/index1.html" class="logo">
-                    <img src="{{asset('assets/images/demos/demo-21/logo.png')}}" alt="Molla Logo" width="100"
+                    <img src="{{asset('assets/logo/logo.jpg')}}" alt="Molla Logo" width="100"
                          height="25">
                 </a>
 
@@ -22,14 +22,13 @@
                         </li>
                         <li>
                             <a href="{{route('client.product')}}" class="sf-with-ul">Combo</a>
-                            @if(!empty($comboCategories))
+                            @if(!empty($comboCategories->toArray()))
                                 <ul>
                                     @foreach($comboCategories as $key=>$item)
                                         <li><a href="#"><i class="fa fa-star"></i>{{$item->name}}</a>
                                         </li>
                                     @endforeach
                                 </ul>
-
                             @endif
                         </li>
                         <li>
@@ -48,7 +47,7 @@
                             <a href="{{route('client.page','huong-dan')}}" >Hướng dẫn</a>
                         </li>
                         <li>
-                            <a href="{{route('client.news')}}" class="sf-with-ul">Tin tức</a>
+                            <a href="{{route('news')}}" class="sf-with-ul">Tin tức</a>
                             @if(!empty($headerPostCategories->toArray()))
                                 <ul>
                                     @foreach($headerPostCategories as $key=>$item)

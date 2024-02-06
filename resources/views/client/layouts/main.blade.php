@@ -31,14 +31,17 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/skins/skin-demo-21.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/demos/demo-21.css')}}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
+{{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
+{{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
+{{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;600&display=swap" rel="stylesheet">    <style>
         body{
             font-family: 'Roboto Slab', serif !important;
-            font-size: 14px;
+            /*font-size: 14px;*/
+        }
+        a{
+            font-family: 'Roboto Slab', serif !important;
         }
     </style>
 </head>
