@@ -46,6 +46,8 @@
 
 <!--Template functions-->
 <script src="{{asset('assets/js/functions.js')}}"></script>
+@yield('after_js')
+
 </body>
 
 </html>
