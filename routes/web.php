@@ -102,6 +102,10 @@ Route::prefix('admin')
 
     #slider
     Route::resource('/sliders','Admin\SliderController');
+
+    #setting
+    Route::resource('/settings','Admin\SettingController');
+
 });
 
 Route::group(['prefix' => 'laravel-filemanager',

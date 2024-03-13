@@ -9,12 +9,10 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Thêm trang</h1>
+                    <h1 class="m-0">Thêm setting</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v2</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -41,52 +39,24 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form method="POST" enctype="multipart/form-data" action="{{route('pages.store')}}">
+                        <form method="POST" enctype="multipart/form-data" action="{{route('settings.store')}}">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Tiêu đề</label>
+                                    <label for="exampleInputPassword1">Key</label>
+                                    <input type="text" class="form-control"
+                                           id="key" placeholder="key" name="key">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên</label>
                                     <input type="text" class="form-control"
                                            id="nameCategory" name="title">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Slug</label>
-                                    <input type="text" class="form-control"
-                                           id="slugCategory" placeholder="slug" name="slug">
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-group note-form-group note-group-select-from-files">
-                                        <label for="note-dialog-image-file-17036059093161" class="note-form-label">Select from files</label>
-                                        <input id="note-dialog-image-file-17036059093161" class="note-image-input form-control-file note-form-control note-input"
-                                               type="file" name="files" accept="image/*" multiple="multiple">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Trạng thái</label>
-                                    <select class="form-control" name="status">
-                                        <option value="active">Sử dụng</option>
-                                        <option value="in_active">Ngừng sử dụng</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Tóm tắt</label>
-                                    <textarea class="form-control" rows="3" placeholder="Enter ..." name="expert"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Nội dung</label>
-                                    <textarea name="content" class="form-control my-editor" rows="7"></textarea>
+                                    <label for="exampleInputPassword1">Giá trị</label>
+                                    <textarea name="details" class="form-control my-editor" rows="5"></textarea>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Meta Description</label>
-                                <textarea class="form-control" rows="3" placeholder="Enter ..." name="description"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Meta Keywords</label>
-                                <textarea class="form-control" rows="3" placeholder="Enter ..." name="keywords"></textarea>
-                            </div>
-                            <!-- /.card-body -->
-
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                             </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Enums\BaseEnum;
 use App\Http\Controllers\Base\BaseWebController;
 use App\Http\Controllers\Controller;
+use App\Models\Setting;
 use App\Repositories\Combo\IComboRepository;
 use App\Repositories\ListSlider\IListSliderRepository;
 use App\Repositories\Post\IPostRepository;
@@ -77,6 +78,7 @@ class HomeController extends BaseWebController
 //            ->orderBy('created_at', 'ASC')
 //            ->take(3)
 //            ->get();
+        $eventHome = Setting::where('key','event-home')->first();
         return view('client.home')->with([
             'postHomes' => $postHomes,
             'sliders' => $sliders,
@@ -84,6 +86,7 @@ class HomeController extends BaseWebController
             'productHomes' => $productHomes,
             'topCombos' => $topCombos,
             'topProducts' => $topProducts,
+            'eventHome' => $eventHome,
         ]);
     }
 }

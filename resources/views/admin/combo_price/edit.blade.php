@@ -18,7 +18,7 @@
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
-            </div><!-- /.container-fluid -->P
+            </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
         @if ($errors->any())

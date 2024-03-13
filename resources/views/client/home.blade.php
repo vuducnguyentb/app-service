@@ -76,7 +76,11 @@
 @endsection
 @section('content')
     <div class="marquee">
-        <p>BatDaNgoai cam kết dịch vụ chất lượng,giá cả phải chăng phù hợp cho mọi người.</p>
+        @if($eventHome)
+        <p>{{$eventHome->details}}</p>
+        @else
+            <p>Chào mừng bạn đến với BatDaNgoai</p>
+        @endif
     </div>
     @if(!empty($sliders->toArray()))
         <!-- Inspiro Slider -->

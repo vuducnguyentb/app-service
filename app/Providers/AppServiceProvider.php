@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
             database_path() . "/migrations/pages",
             database_path() . "/migrations/sliders",
             database_path() . "/migrations/triggers",
+            database_path() . "/migrations/settings",
         ]);
     }
 
