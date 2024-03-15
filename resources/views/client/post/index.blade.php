@@ -107,29 +107,107 @@
                         </div>
                         <!--End: Tabs with Posts-->
 
-                        <!-- Twitter widget -->
-                        <div class="widget widget-tweeter" data-username="envato" data-limit="2">
-                            <h4 class="widget-title">Recent Tweets</h4>
-                        </div>
-                        <!-- end: Twitter widget-->
 
-                        <!--widget tags -->
-{{--                        <div class="widget  widget-tags">--}}
-{{--                            <h4 class="widget-title">Tags</h4>--}}
-{{--                            <div class="tags">--}}
-{{--                                <a href="#">Design</a>--}}
-{{--                                <a href="#">Portfolio</a>--}}
-{{--                                <a href="#">Digital</a>--}}
-{{--                                <a href="#">Branding</a>--}}
-{{--                                <a href="#">HTML</a>--}}
-{{--                                <a href="#">Clean</a>--}}
-{{--                                <a href="#">Peace</a>--}}
-{{--                                <a href="#">Love</a>--}}
-{{--                                <a href="#">CSS3</a>--}}
-{{--                                <a href="#">jQuery</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-                        <!--end: widget tags -->
+                        <!-- Combo -->
+                        <div class="widget clearfix widget-shop">
+                            @if(!empty($comboViews->toArray()))
+                                <h4 class="widget-title">Combo Thuê Bạt</h4>
+                                @foreach($comboViews as $key=>$item)
+                                    <div class="product">
+                                        <div class="product-image">
+                                            <a href="{{route('client.combo-detail',$item->slug)}}">
+                                                @if($item->image)
+                                                    <img src="{{asset('storage/'.$item->image)}}"
+                                                         alt="{{$item->name}}"
+                                                         width="100%"
+                                                    >
+                                                @else
+                                                    <img alt="{{$item->name}}"
+                                                         src="{{asset('assets/images/shop/products/1.jpg')}}"
+                                                         width="100%"
+                                                    >
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <div class="product-description">
+                                            <div class="product-category">
+                                                {{$item->productCategory? $item->productCategory->name : ''}}
+                                            </div>
+                                            <div class="product-title">
+                                                <p class="text-primary"><a href="{{route('client.combo-detail',$item->slug)}}">{{$item->name}}</a></p>
+                                            </div>
+                                            <div class="product-price">
+                                                @if(!empty($item->productPrices->toArray()))
+                                                    <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                    </ins>
+                                                @else
+                                                    <ins><span class="text-danger">Liên hệ</span></ins>
+                                                @endif
+                                            </div>
+                                            <div class="product-rate">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                        <!-- end: Combo-->
+
+                        <!-- Product -->
+                        <div class="widget clearfix widget-shop">
+                            @if(!empty($productViews->toArray()))
+                                <h4 class="widget-title">Sản phẩm thuê</h4>
+                                @foreach($productViews as $key=>$item)
+                                    <div class="product">
+                                        <div class="product-image">
+                                            <a href="{{route('client.product-detail',$item->slug)}}">
+                                                @if($item->image)
+                                                    <img src="{{asset('storage/'.$item->image)}}"
+                                                         alt="{{$item->name}}"
+                                                         width="100%"
+                                                    >
+                                                @else
+                                                    <img alt="{{$item->name}}"
+                                                         src="{{asset('assets/images/shop/products/1.jpg')}}"
+                                                         width="100%"
+                                                    >
+                                                @endif
+                                            </a>
+                                        </div>
+                                        <div class="product-description">
+                                            <div class="product-category">
+                                                {{$item->productCategory? $item->productCategory->name : ''}}
+                                            </div>
+                                            <div class="product-title">
+                                                <p class="text-primary"><a href="{{route('client.product-detail',$item->slug)}}">{{$item->name}}</a></p>
+                                            </div>
+                                            <div class="product-price">
+                                                @if(!empty($item->productPrices->toArray()))
+                                                    <ins><span class="text-danger">{{number_format($item->productPrices[0]->price, 0, ',', '.')}} VND</span>
+                                                    </ins>
+                                                @else
+                                                    <ins><span class="text-danger">Liên hệ</span></ins>
+                                                @endif
+                                            </div>
+                                            <div class="product-rate">
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                                <i class="fa fa-star-half-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            @endif
+                        </div>
+                        <!-- end: Product-->
+
 
                         <!--widget newsletter-->
                         <div class="widget  widget-newsletter">
