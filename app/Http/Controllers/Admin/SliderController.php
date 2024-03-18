@@ -102,7 +102,7 @@ class SliderController extends BaseWebController
         return view('admin.slider.edit')->with(
             [
                 'listSlider' => $listSlider,
-                'sliders' => json_encode($sliders),
+                'sliders' => $sliders,
             ]
         );
     }

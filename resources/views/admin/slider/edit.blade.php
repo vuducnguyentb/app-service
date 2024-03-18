@@ -115,7 +115,7 @@
                 >
             </td>
             <td class="jsgrid-cell">
-                <textarea rows="3" name="items[#xxxx#][content]" id="content_#xxxx#"></textarea>
+                <textarea rows="5" name="items[#xxxx#][content]" id="content_#xxxx#"></textarea>
             </td>
             <td class="jsgrid-cell">
                 <input type="text" placeholder="Tiêu đề" name="items[#xxxx#][link]"
@@ -141,7 +141,8 @@
 
     <script>
             @if($sliders)
-        var mi_items = JSON.parse('{!! $sliders !!}')
+        {{--var mi_items = JSON.parse('{!! $sliders !!}')--}}
+        var mi_items = @json($sliders);
             @else
         var mi_items = [];
             @endif
