@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
-    <base href="http://app-service.test/TinyMCE4/">
+    <base href="https://batdangoai.com/TinyMCE4/">
     @yield('before_css')
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">

@@ -98,7 +98,6 @@
                                     <div class="post-thumbnail-content">
                                         <a href="{{route('new-detail',$item->slug)}}">{{$item->title}}</a>
                                         <span class="post-date"><i class="fa fa-clock-o"></i>{{Carbon\Carbon::create($item->created_at)->format('d-m-Y')}}</span>
-                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
                                     </div>
                                 </div>
                                 @endforeach
@@ -106,7 +105,6 @@
                             </div>
                         </div>
                         <!--End: Tabs with Posts-->
-
 
                         <!-- Combo -->
                         <div class="widget clearfix widget-shop">
@@ -207,7 +205,6 @@
                             @endif
                         </div>
                         <!-- end: Product-->
-
 
                         <!--widget newsletter-->
                         <div class="widget  widget-newsletter">

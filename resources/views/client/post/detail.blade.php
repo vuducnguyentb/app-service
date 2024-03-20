@@ -79,7 +79,6 @@
                                     <div class="post-thumbnail-content">
                                         <a href="{{route('new-detail',$item->slug)}}">{{$item->title}}</a>
                                         <span class="post-date"><i class="fa fa-clock-o"></i> 6m ago</span>
-{{--                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>--}}
                                     </div>
                                 </div>
                                     @endforeach
@@ -87,12 +86,6 @@
                             </div>
                         </div>
                         <!--End: Tabs with Posts-->
-
-                        <!-- Twitter widget -->
-{{--                        <div class="widget widget-tweeter" data-username="envato" data-limit="2">--}}
-{{--                            <h4 class="widget-title">Recent Tweets</h4>--}}
-{{--                        </div>--}}
-                        <!-- end: Twitter widget-->
 
                         <!--widget tags -->
                         <div class="widget  widget-tags">
@@ -206,7 +199,6 @@
                             @endif
                         </div>
                         <!-- end: Product-->
-
 
                     </div>
                 </div>

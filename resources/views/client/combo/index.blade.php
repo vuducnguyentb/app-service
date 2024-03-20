@@ -22,16 +22,14 @@
                 <h1>BatDaNgoai</h1>
                 <span>Quý khách vui lòng đến cửa hàng nếu muốn thuê nhiều sản phẩm để được giá ưu đãi tốt nhất</span>
             </div>
-            <div class="breadcrumb">
-                <ul>
-                    <li><a href="#">Trang chủ</a>
-                    </li>
-                    <li><a href="#">Sản phẩm</a>
-                    </li>
-                    <li class="active"><a href="#">Sidebar Left</a>
-                    </li>
-                </ul>
-            </div>
+            <!--<div class="breadcrumb">-->
+            <!--    <ul>-->
+            <!--        <li><a href="#">Trang chủ</a>-->
+            <!--        </li>-->
+            <!--        <li><a href="#">Sản phẩm</a>-->
+            <!--        </li>-->
+            <!--    </ul>-->
+            <!--</div>-->
         </div>
     </section>
     <!-- end: Page title -->

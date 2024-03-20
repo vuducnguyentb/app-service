@@ -35,7 +35,7 @@ class ComboClientController extends BaseWebController
             ->where('status', BaseEnum::Active)
             ->where('type', BaseEnum::TypeCombo)
             ->get();
-        $combos = $this->productRepository->model()
+        $combos = $this->comboRepository->model()
             ->with(['productPrices','productCategory'])
             ->where('status',BaseEnum::Active)
             ->paginate(9);

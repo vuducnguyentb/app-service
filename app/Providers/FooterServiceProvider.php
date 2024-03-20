@@ -31,7 +31,7 @@ class FooterServiceProvider extends ServiceProvider
             ->orderBy('created_at', 'DESC')
             ->take(3)
             ->get();
-        if(empty($postNewFooters)){
+        if(empty($postNewFooters->toArray())){
             $data = [];
         }else{
             $data = fractal($postNewFooters, new ListPostFooterTransformer())->toArray()['data'];

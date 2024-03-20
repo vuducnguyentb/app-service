@@ -30,11 +30,9 @@ class NewController extends BaseWebController
         $this->categoryRepository = $categoryRepository;
         $this->comboRepository = $comboRepository;
         $this->productRepository = $productRepository;
-
     }
 
-    public function index(Request $request)
-    {
+    public function index(Request $request){
         $posts = $this->postRepository->model()
             ->with('categories')
             ->where('status',BaseEnum::Active)
@@ -42,7 +40,7 @@ class NewController extends BaseWebController
             ->paginate(5);
         $randomPosts = $this->postRepository->model()
             ->inRandomOrder()->limit(4)->get();
-        $comboViews = $this->comboRepository->model()
+       $comboViews = $this->comboRepository->model()
             ->select('id', 'name', 'slug', 'image', 'is_hot', 'views')
             ->with('productPrices', 'productCategory')
             ->take(3)->orderBy('views', 'DESC')->get();
@@ -58,11 +56,10 @@ class NewController extends BaseWebController
         ]);
     }
 
-    public function getCategory($slug)
-    {
+    public function getCategory($slug){
         $categoryPost = $this->categoryRepository->model()
-            ->where('slug', $slug)->first();
-        $idPosts = CategoryPost::where('category_id', $categoryPost->id)
+            ->where('slug',$slug)->first();
+        $idPosts = CategoryPost::where('category_id',$categoryPost->id)
             ->get()->pluck('post_id')->toArray();
         $postInCategories = $this->postRepository->model()
             ->whereIn('id',$idPosts)
@@ -90,18 +87,19 @@ class NewController extends BaseWebController
             ]);
     }
 
-    public function getDetail($slug)
-    {
+    public function getDetail($slug){
         $post = $this->postRepository->model()
-            ->where('slug', $slug)
+            ->where('slug',$slug)
             ->first();
         $recentPosts = $this->postRepository->model()
-            ->where('status', BaseEnum::Active)
-            ->where('id', '!=', $post->id)
+            ->where('status',BaseEnum::Active)
+            ->where('id','!=',$post->id)
+            ->orderBy('created_at','DESC')
             ->take(4)
             ->get();
         $postCategories = $this->categoryRepository->model()
             ->get();
+
         $comboViews = $this->comboRepository->model()
             ->select('id', 'name', 'slug', 'image', 'is_hot', 'views')
             ->with('productPrices', 'productCategory')

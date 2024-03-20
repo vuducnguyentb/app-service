@@ -84,7 +84,7 @@
                 <div class="sidebar col-md-3">
                     <div class="pinOnScroll">
                         <!--Tabs with Posts-->
-                        <div class="widget clearfix">
+                        <div class="widget ">
                             <h4 class="widget-title">Bài viết khác</h4>
                             <div class="post-thumbnail-list">
                                 @foreach($postNotInCategories as $key=>$item)
@@ -97,6 +97,7 @@
                                     <div class="post-thumbnail-content">
                                         <a href="{{route('new-detail',$item->slug)}}">{{$item->title}}</a>
                                         <span class="post-date"><i class="fa fa-clock-o"></i>{{Carbon\Carbon::create($item->created_at)->format('d-m-Y')}}</span>
+                                        <span class="post-category"><i class="fa fa-tag"></i> Technology</span>
                                     </div>
                                 </div>
                                 @endforeach
@@ -204,6 +205,7 @@
                         </div>
                         <!-- end: Product-->
 
+
                         <!--widget newsletter-->
                         <div class="widget  widget-newsletter">
                             <form class="widget-subscribe-form form-inline" action="include/subscribe-form.php"
@@ -221,10 +223,6 @@
 
                         </div>
                         <!--end: widget newsletter-->
-
-
-
-
                     </div>
                 </div>
                 <!-- end: Sidebar-->

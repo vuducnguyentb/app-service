@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashBoardController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/link', function () {
+//     Artisan::call('storage:link');
+// });
+// Route::get('/clear-cache', function () {
+//     Artisan::call('cache:clear');
+// });
+
+// Route::get('/clear-view', function () {
+//     Artisan::call('view:clear');
+// });
+
+// Route::get('/clear-config', function () {
+//     Artisan::call('config:clear');
+// });
 
 #Trang chủ
 Route::get('/','Client\HomeController@index')->name('home');
@@ -64,6 +79,11 @@ Route::post('/sign-email','Client\ContactEmailController@checkMail')
 Route::post('/seach-product','Client\SearchProductController@searchProduct')
     ->name('client.search-product');
 
+#giỏ hàng
+Route::get('/cart','Client\CartController@getCart')->name('product.cart');
+Route::post('/add-cart','Client\CartController@addToCart')->name('add.cart');
+//Route::get('/checkout',CheckoutComponent::class)->name('checkout');
+
 #Các route trang quản trị
 Route::prefix('admin')
     ->middleware([
@@ -103,9 +123,8 @@ Route::prefix('admin')
     #slider
     Route::resource('/sliders','Admin\SliderController');
 
-    #setting
+        #setting
     Route::resource('/settings','Admin\SettingController');
-
 });
 
 Route::group(['prefix' => 'laravel-filemanager',

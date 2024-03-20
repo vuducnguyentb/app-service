@@ -41,7 +41,7 @@ class HomeController extends BaseWebController
         $postHomes = $this->postRepository->model()
             ->where('status', BaseEnum::Active)
             ->take(4)
-            ->orderBy('created_at', 'ASC')
+            ->orderBy('created_at', 'DESC')
             ->get();
         $sliders = $this->sliderRepository->model()
             ->where('list_slider_id', 1)
@@ -71,6 +71,7 @@ class HomeController extends BaseWebController
             ->orderBy('created_at', 'ASC')
             ->take(3)
             ->get();
+        $eventHome = Setting::where('key','event-home')->first();
 //        $productInCateOnes = $this->productRepository->model()
 //            ->with(['productPrices','productCategory'])
 //            ->where('status', BaseEnum::Active)
@@ -78,7 +79,6 @@ class HomeController extends BaseWebController
 //            ->orderBy('created_at', 'ASC')
 //            ->take(3)
 //            ->get();
-        $eventHome = Setting::where('key','event-home')->first();
         return view('client.home')->with([
             'postHomes' => $postHomes,
             'sliders' => $sliders,
@@ -86,7 +86,7 @@ class HomeController extends BaseWebController
             'productHomes' => $productHomes,
             'topCombos' => $topCombos,
             'topProducts' => $topProducts,
-            'eventHome' => $eventHome,
+             'eventHome' => $eventHome,
         ]);
     }
 }

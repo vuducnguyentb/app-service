@@ -29,16 +29,16 @@
                         </a>
                         <!--end: top search-->
                     </li>
-{{--                    <li class="hidden-xs">--}}
-{{--                        <!--shopping cart-->--}}
-{{--                        <div id="shopping-cart">--}}
-{{--                            <a href="shop-cart.html">--}}
-{{--                                <span class="shopping-cart-items">8</span>--}}
+                    <li class="hidden-xs">
+                        <!--shopping cart-->
+                        <div id="shopping-cart">
+                            <a href="shop-cart.html">
+                                <span class="shopping-cart-items">8</span>
 
-{{--                                <i class="fa fa-shopping-cart"></i></a>--}}
-{{--                        </div>--}}
-{{--                        <!--end: shopping cart-->--}}
-{{--                    </li>--}}
+                                <i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                        <!--end: shopping cart-->
+                    </li>
 {{--                    Đa ngôn ngữ--}}
 {{--                    <li>--}}
 {{--                        <div class="topbar-dropdown">--}}
